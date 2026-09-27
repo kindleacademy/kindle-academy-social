@@ -1,0 +1,23 @@
+name: Renouveler le jeton Instagram
+
+on:
+  schedule:
+    - cron: '0 3 1,15 * *'   # le 1er et le 15 de chaque mois
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Renouveler et réenregistrer le secret
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          NEW=$(node scripts/refresh-token.mjs)
+          echo "::add-mask::$NEW"
+          gh secret set IG_TOKEN --repo "$GITHUB_REPOSITORY" --body "$NEW"

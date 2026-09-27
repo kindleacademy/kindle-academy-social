@@ -1,0 +1,46 @@
+name: Publier sur Instagram
+
+on:
+  schedule:
+    # 16:00 UTC = 18:00 à Paris en heure d'été (17:00 en hiver)
+    - cron: '0 16 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Vérifier sans publier'
+        type: boolean
+        default: true
+      folder:
+        description: 'Publier ce dossier précis (optionnel), ex. posts/2026-09-28-5-erreurs-kdp'
+        required: false
+
+permissions:
+  contents: write
+
+concurrency: publish
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Publier le post du jour
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          BRANCH: ${{ github.ref_name }}
+          DRY_RUN: ${{ inputs.dry_run && '1' || '0' }}
+          FOLDER: ${{ inputs.folder }}
+        run: node scripts/publish.mjs
+      - name: Enregistrer le journal
+        run: |
+          if [ -n "$(git status --porcelain published.json)" ]; then
+            git config user.name "ka-bot"
+            git config user.email "actions@users.noreply.github.com"
+            git add published.json
+            git commit -m "Publié : $(date -u +%F)"
+            git push
+          fi
