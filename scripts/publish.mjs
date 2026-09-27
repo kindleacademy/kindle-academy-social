@@ -23,7 +23,7 @@ if (process.env.FOLDER) post = sched.posts.find(p => p.folder === process.env.FO
 else post = sched.posts.find(p => p.date === today && p.approved && !log.some(l => l.folder === p.folder));
 
 if (!post) { console.log(`Rien à publier le ${today}.`); process.exit(0); }
-if (!post.approved) { console.log(`${post.folder} n'est pas validé : on ne publie pas.`); process.exit(0); }
+if (!post.approved && !DRY) { console.log(`${post.folder} n'est pas validé : on ne publie pas.`); process.exit(0); }
 if (log.some(l => l.folder === post.folder)) { console.log(`${post.folder} déjà publié.`); process.exit(0); }
 
 const imgs = fs.readdirSync(post.folder).filter(f => /\.jpe?g$/i.test(f)).sort();
