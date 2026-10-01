@@ -1,0 +1,399 @@
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;700&amp;family=Instrument+Serif:ital@0;1&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<style>
+.ka{--ink:#0E0B26;--ink2:#1A1545;--violet:#5B3DF5;--violet-soft:#EDE9FF;--coral:#FF5A36;--coral-soft:#FFE9E2;--sun:#FFC23D;--sun-soft:#FFF4D6;--mint:#27C79A;--paper:#FBF8F3;--line:#E6E0D6;--text:#1B1830;--muted:#6B6780;
+ font-family:Inter,system-ui,sans-serif;color:var(--text);font-size:17px;line-height:1.6;background:var(--paper);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.ka *{box-sizing:border-box;margin:0;padding:0}
+.ka img{max-width:100%;display:block}
+.ka a{color:inherit}
+.ka .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.ka .serif{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;letter-spacing:-.01em}
+.ka h1,.ka h2,.ka h3{font-family:"Space Grotesk",sans-serif;letter-spacing:-.03em;line-height:1.05;color:inherit}
+.ka h2{font-size:clamp(34px,5vw,54px);font-weight:700}
+.ka h2 .serif{color:var(--violet)}
+.ka h3{font-size:20px;letter-spacing:-.01em;line-height:1.25}
+.ka .kicker{font-family:"Space Grotesk";font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--coral);display:inline-flex;align-items:center;gap:10px;margin-bottom:18px}
+.ka .kicker:before{content:"";width:24px;height:2px;background:currentColor}
+.ka .lead{font-size:19px;color:#3A3652;max-width:680px;margin-top:18px}
+.ka section{position:relative}
+.ka .sec{padding:110px 0}
+.ka .btn{display:inline-flex;align-items:center;gap:12px;background:linear-gradient(90deg,var(--coral),#FF8A3D);color:#fff;text-decoration:none;font-family:"Space Grotesk";font-weight:700;font-size:18px;letter-spacing:.02em;padding:20px 34px;border-radius:60px;box-shadow:0 16px 40px rgba(255,90,54,.4);transition:transform .2s,box-shadow .2s}
+.ka .btn:hover{transform:translateY(-2px);box-shadow:0 22px 50px rgba(255,90,54,.5)}
+.ka .btn span{font-size:22px;transition:transform .2s}.ka .btn:hover span{transform:translateX(4px)}
+.ka .dark{background:var(--ink);color:#fff;overflow:hidden}
+.ka .dark .lead{color:rgba(255,255,255,.78)}
+.ka .glow{position:absolute;border-radius:50%;pointer-events:none}
+.ka .grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:linear-gradient(180deg,#000,transparent 85%);mask-image:linear-gradient(180deg,#000,transparent 85%)}
+.ka .top{position:relative;z-index:3;display:flex;justify-content:space-between;align-items:center;padding:26px 0}
+.ka .brand{display:flex;align-items:center;gap:10px;font-family:"Space Grotesk";font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase}
+.ka .brand i{width:14px;height:14px;border-radius:3px;background:linear-gradient(135deg,var(--coral),var(--sun));transform:rotate(45deg);display:inline-block}
+.ka .top .tag{font-family:"Space Grotesk";font-size:13px;letter-spacing:.16em;text-transform:uppercase;border:1px solid rgba(255,255,255,.28);padding:8px 16px;border-radius:40px}
+.ka .hero{padding:30px 0 120px}
+.ka .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:center;margin-top:40px}
+.ka .hero .badge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);padding:7px 16px 7px 8px;border-radius:40px;font-family:"Space Grotesk";font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+.ka .hero .badge b{background:var(--coral);padding:3px 10px;border-radius:30px;letter-spacing:.06em}
+.ka .hero h1{font-size:clamp(42px,6vw,76px);font-weight:700;letter-spacing:-.045em;line-height:.95;margin-top:26px}
+.ka .hero h1 .serif{color:var(--sun);font-size:1.08em}
+.ka .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.ka .chips span{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);padding:9px 16px;border-radius:40px;font-size:15px;font-weight:500}
+.ka .chips span:before{content:"✓";color:var(--mint);font-weight:700;margin-right:8px}
+.ka .cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:24px;margin-top:38px}
+.ka .proof{display:flex;align-items:center;gap:12px;font-size:15px;color:rgba(255,255,255,.8)}
+.ka .avatars{display:flex}
+.ka .avatars i{width:34px;height:34px;border-radius:50%;border:2px solid var(--ink);margin-left:-10px;display:block}
+.ka .avatars i:first-child{margin-left:0}
+.ka .proof b{color:#fff;font-family:"Space Grotesk";font-size:17px}
+.ka .fine{margin-top:18px;font-size:13px;color:rgba(255,255,255,.55);letter-spacing:.02em}
+.ka .mock{position:relative;justify-self:center;width:100%;max-width:420px}
+.ka .mock .sticker{position:absolute;left:-40px;top:-28px;width:132px;height:132px;border-radius:50%;background:var(--sun);color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(-12deg);font-family:"Space Grotesk";font-weight:700;line-height:1;text-align:center;z-index:3;box-shadow:0 16px 36px rgba(0,0,0,.35)}
+.ka .mock .sticker small{font-size:11px;letter-spacing:.16em}
+.ka .mock .sticker b{font-size:40px;letter-spacing:-.04em;margin:4px 0}
+.ka .mock .float{position:absolute;right:-26px;bottom:34px;z-index:3;background:#fff;color:var(--ink);border-radius:16px;padding:14px 18px;box-shadow:0 20px 40px rgba(0,0,0,.35);max-width:210px}
+.ka .mock .float .k{font-family:"Space Grotesk";font-size:11px;letter-spacing:.16em;font-weight:700;color:var(--violet)}
+.ka .mock .float .v{font-family:"Space Grotesk";font-weight:700;font-size:17px;line-height:1.2;margin-top:4px}
+.ka .method{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:80px}
+.ka .method div{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:24px 26px;backdrop-filter:blur(6px)}
+.ka .method b{font-family:"Space Grotesk";font-size:36px;letter-spacing:-.03em;display:block;line-height:1}
+.ka .method div:nth-child(1) b{color:var(--coral)}.ka .method div:nth-child(2) b{color:var(--sun)}.ka .method div:nth-child(3) b{color:#A99BFF}
+.ka .method h3{margin-top:12px;font-size:21px}
+.ka .method p{color:rgba(255,255,255,.7);font-size:15px;margin-top:4px}
+.ka .blockers{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.ka .blockers span{background:#fff;border:1px solid var(--line);border-radius:40px;padding:10px 18px;font-weight:500;font-size:15px}
+.ka .blockers span:before{content:"●";color:var(--coral);margin-right:8px;font-size:10px;vertical-align:2px}
+.ka .cards4{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:44px}
+.ka .card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px}
+.ka .card .ic{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px}
+.ka .card p{color:#4A4660;margin-top:8px;font-size:16px}
+.ka .result{margin-top:22px;background:var(--ink);color:#fff;border-radius:22px;padding:34px 38px;position:relative;overflow:hidden;display:flex;gap:28px;align-items:center}
+.ka .result .n{font-family:"Space Grotesk";font-weight:700;font-size:15px;letter-spacing:.2em;color:var(--sun);white-space:nowrap}
+.ka .result p{font-family:"Instrument Serif";font-style:italic;font-size:26px;line-height:1.3;position:relative}
+.ka .result p b{color:var(--sun);font-weight:400}
+.ka .inside{display:grid;grid-template-columns:1fr 440px;gap:60px;margin-top:56px;align-items:start}
+.ka .steps{display:flex;flex-direction:column;gap:14px;position:relative}
+.ka .steps:before{content:"";position:absolute;left:27px;top:30px;bottom:30px;width:2px;background:linear-gradient(180deg,var(--coral),var(--violet))}
+.ka .step{display:flex;gap:22px;align-items:flex-start;position:relative}
+.ka .step .no{flex:0 0 56px;height:56px;border-radius:16px;color:#fff;font-family:"Space Grotesk";font-weight:700;font-size:19px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 5px var(--paper)}
+.ka .step .body{flex:1;background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px 24px}
+.ka .step p{color:#4A4660;font-size:15.5px;margin-top:6px}
+.ka .step .out{display:inline-block;margin-top:12px;font-family:"Space Grotesk";font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--violet);background:var(--violet-soft);padding:5px 12px;border-radius:30px}
+.ka .stack{position:sticky;top:30px;height:600px}
+.ka .stack .lbl{position:absolute;left:50%;bottom:0;transform:translateX(-50%);white-space:nowrap;background:var(--ink);color:#fff;font-family:"Space Grotesk";font-size:13px;letter-spacing:.14em;font-weight:700;padding:10px 18px;border-radius:40px}
+.ka .incl{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px}
+.ka .incl .card{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.ka .incl .card div.t{padding:20px 22px 24px}
+.ka .incl .num{font-family:"Space Grotesk";font-weight:700;color:var(--coral);font-size:14px;letter-spacing:.14em}
+.ka .honest{margin-top:22px;display:flex;gap:18px;align-items:center;background:var(--violet-soft);border-radius:18px;padding:22px 26px}
+.ka .honest .ic{flex:0 0 44px;height:44px;border-radius:50%;background:var(--violet);color:#fff;display:flex;align-items:center;justify-content:center;font-family:"Space Grotesk";font-weight:700;font-size:20px}
+.ka .honest b{font-family:"Space Grotesk";letter-spacing:.14em;text-transform:uppercase;font-size:13px;display:block;color:var(--ink)}
+.ka .personas{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+.ka .persona{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px;display:flex;flex-direction:column}
+.ka .persona .who{display:flex;align-items:center;gap:14px}
+.ka .persona .av{flex:0 0 54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:"Space Grotesk";font-weight:700;font-size:21px;color:#fff}
+.ka .persona .nm{font-family:"Space Grotesk";font-weight:700;font-size:18px;line-height:1.1}
+.ka .persona .rl{font-size:13px;color:var(--muted);letter-spacing:.04em}
+.ka .persona q{display:block;font-family:"Instrument Serif";font-style:italic;font-size:23px;line-height:1.25;margin:20px 0 10px;quotes:none;color:var(--ink)}
+.ka .persona p{color:#4A4660;font-size:15px}
+.ka .persona .need{margin-top:auto;padding-top:18px}
+.ka .persona .need span{display:block;background:var(--paper);border-radius:12px;padding:12px 14px;font-size:14.5px;font-weight:600;color:var(--ink)}
+.ka .persona .need span:before{content:"→ ";color:var(--coral)}
+.ka .formsec{padding:100px 0 110px}
+.ka .recap{list-style:none;margin-top:30px;display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.ka .recap li{display:flex;gap:14px;align-items:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:14px 18px;font-size:16px}
+.ka .recap li i{flex:0 0 28px;height:28px;border-radius:50%;background:var(--mint);color:var(--ink);font-style:normal;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+.ka .faq{max-width:820px;margin:44px auto 0;display:flex;flex-direction:column;gap:12px}
+.ka .faq details{background:#fff;border:1px solid var(--line);border-radius:18px;padding:0 26px}
+.ka .faq summary{cursor:pointer;list-style:none;padding:22px 0;font-family:"Space Grotesk";font-weight:700;font-size:19px;display:flex;justify-content:space-between;gap:20px;align-items:center}
+.ka .faq summary::-webkit-details-marker{display:none}
+.ka .faq summary:after{content:"+";flex:0 0 34px;height:34px;border-radius:50%;background:var(--violet-soft);color:var(--violet);display:flex;align-items:center;justify-content:center;font-size:22px;transition:transform .2s}
+.ka .faq details[open] summary:after{transform:rotate(45deg);background:var(--violet);color:#fff}
+.ka .faq details p{padding:0 0 22px;color:#4A4660}
+.ka .center{text-align:center}.ka .center .lead{margin-left:auto;margin-right:auto}
+@media (max-width:960px){
+ .ka .hero-grid,.ka .inside{grid-template-columns:1fr;gap:50px}
+ .ka .mock{max-width:330px;margin-top:20px}
+ .ka .stack{position:relative;top:0;height:460px;max-width:420px;margin:0 auto}
+ .ka .incl{grid-template-columns:repeat(2,1fr)}
+ .ka .personas{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:640px){
+ .ka{font-size:16px}
+ .ka .sec{padding:76px 0}
+ .ka .wrap{padding:0 18px}
+ .ka .top .tag{display:none}
+ .ka .method,.ka .cards4,.ka .incl,.ka .personas{grid-template-columns:1fr}
+ .ka .method{margin-top:56px}
+ .ka .btn{width:100%;justify-content:center;padding:19px 22px}
+ .ka .mock .sticker{left:-10px;width:104px;height:104px}.ka .mock .sticker b{font-size:32px}
+ .ka .mock .float{right:-6px}
+ .ka .result{flex-direction:column;align-items:flex-start;padding:28px}
+ .ka .result p{font-size:22px}
+ .ka .step .no{flex-basis:46px;height:46px;font-size:16px}.ka .steps:before{left:22px}
+ .ka .step .body{padding:18px}
+ .ka .stack{height:auto;display:flex;gap:12px;overflow-x:auto;padding:10px 4px 16px;scroll-snap-type:x mandatory}
+ .ka .stack .lbl{display:none}
+ .ka .hero .badge{font-size:11px;letter-spacing:.1em}
+}
+.ka .cv{position:relative;aspect-ratio:210/297;border-radius:14px;overflow:hidden;background:#0E0B26;color:#fff;padding:9% 8%;box-shadow:0 40px 80px rgba(0,0,0,.55),0 0 0 8px rgba(255,255,255,.07);transform:rotate(4deg)}
+.ka .cv:before{content:"";position:absolute;width:90%;height:70%;right:-35%;top:-20%;border-radius:50%;background:radial-gradient(circle,rgba(255,90,54,.85),transparent 62%)}
+.ka .cv:after{content:"";position:absolute;width:110%;height:80%;left:-45%;bottom:-35%;border-radius:50%;background:radial-gradient(circle,rgba(91,61,245,.9),transparent 62%)}
+.ka .cv>*{position:relative;z-index:1}
+.ka .cv .cb{font-family:"Space Grotesk";font-size:10px;letter-spacing:.2em;font-weight:700;display:flex;align-items:center;gap:6px}
+.ka .cv .cb i{width:9px;height:9px;border-radius:2px;background:linear-gradient(135deg,#FF5A36,#FFC23D);transform:rotate(45deg);display:inline-block}
+.ka .cv .ct{display:inline-block;margin-top:16%;font-family:"Space Grotesk";font-size:9px;letter-spacing:.14em;background:#FF5A36;padding:3px 8px;border-radius:20px;font-weight:700}
+.ka .cv .ch{font-family:"Space Grotesk";font-weight:700;font-size:clamp(22px,2.6vw,33px);line-height:.95;letter-spacing:-.04em;margin-top:6%}
+.ka .cv .ch em{font-family:"Instrument Serif";font-weight:400;font-size:1.1em}
+.ka .cv .ch .o{color:#FF5A36}.ka .cv .ch .y{color:#FFC23D}
+.ka .cv .cs{font-size:11px;color:rgba(255,255,255,.8);margin-top:6%;line-height:1.4;max-width:80%}
+.ka .cv .rows{position:absolute;left:8%;right:8%;bottom:9%;display:flex;flex-direction:column;gap:7px}
+.ka .cv .rows div{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:10px;padding:7px 10px;font-size:10.5px;line-height:1.2}
+.ka .cv .rows b{font-family:"Space Grotesk";font-size:16px;min-width:30px}
+.ka .cv .rows div:nth-child(1) b{color:#FF5A36}.ka .cv .rows div:nth-child(2) b{color:#FFC23D}.ka .cv .rows div:nth-child(3) b{color:#A99BFF}.ka .cv .rows div:nth-child(4) b{color:#27C79A}
+.ka .mock .back2{position:absolute;inset:0;border-radius:14px;background:#FBF8F3;transform:rotate(-7deg) translate(-40px,20px);opacity:.6;box-shadow:0 30px 60px rgba(0,0,0,.4)}
+.ka .pg{background:#FBF8F3;border:1px solid var(--line);border-radius:12px;padding:22px;box-shadow:0 30px 60px rgba(14,11,38,.2);aspect-ratio:210/297;position:absolute;width:72%;overflow:hidden}
+.ka .pg .k{font-family:"Space Grotesk";font-size:10px;letter-spacing:.18em;font-weight:700;color:var(--coral)}
+.ka .pg .big{font-family:"Space Grotesk";font-weight:700;font-size:44px;line-height:.9;color:var(--violet);letter-spacing:-.05em;margin-top:8px}
+.ka .pg h4{font-family:"Space Grotesk";font-size:17px;line-height:1.15;color:var(--ink);margin-top:8px;letter-spacing:-.02em}
+.ka .pg .bar{height:7px;border-radius:6px;background:#E9E3D8;margin-top:9px}
+.ka .pg .chk{display:flex;align-items:center;gap:8px;margin-top:10px}
+.ka .pg .chk i{width:13px;height:13px;border-radius:4px;background:var(--violet);flex:0 0 13px}
+.ka .pg .chk span{height:7px;border-radius:6px;background:#E9E3D8;flex:1}
+.ka .pg .code{background:var(--ink);border-radius:10px;padding:12px;margin-top:12px}
+.ka .pg .code span{display:block;height:6px;border-radius:4px;background:rgba(233,230,255,.35);margin-top:7px}
+.ka .pg .code span.y{background:rgba(255,194,61,.8);width:40%}
+.ka .pg .chips2{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px}
+.ka .pg .chips2 i{height:18px;border-radius:20px;display:block}
+.ka .stack .pg:nth-child(1){left:0;top:40px;transform:rotate(-6deg)}
+.ka .stack .pg:nth-child(2){right:0;top:0;transform:rotate(5deg)}
+.ka .stack .pg:nth-child(3){left:12%;top:150px;transform:rotate(-1deg)}
+.ka .incl .thumb{height:150px;display:flex;align-items:center;justify-content:center;font-size:54px;position:relative;overflow:hidden}
+@media (max-width:640px){
+ .ka .pg{position:static!important;flex:0 0 72%;width:72%;transform:none!important;scroll-snap-align:start}
+ .ka .mock .back2{display:none}
+ .ka .cv{transform:rotate(2deg)}
+}
+.ka .fcard{position:relative;z-index:2;max-width:540px;margin:44px auto 0;border:3px solid transparent;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,#FF5A36,#FFC23D,#5B3DF5) border-box;color:var(--ink);border-radius:26px;padding:40px 36px;box-shadow:0 40px 80px rgba(0,0,0,.45);text-align:center}
+.ka .fcard .tagf{display:inline-flex;align-items:center;gap:8px;background:var(--sun-soft);color:#9A6A00;font-family:"Space Grotesk";font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;padding:6px 14px;border-radius:40px}
+.ka .fcard .pr{display:flex;align-items:baseline;justify-content:center;gap:12px;margin-top:16px}
+.ka .fcard .pr b{font-family:"Space Grotesk";font-size:56px;letter-spacing:-.04em;line-height:1}
+.ka .fcard .pr span{color:var(--muted);font-size:15px}
+.ka .fcard .tt{font-family:"Space Grotesk";font-weight:700;font-size:25px;letter-spacing:-.02em;line-height:1.15;margin-top:10px}
+.ka .fcard .st{color:#4A4660;font-size:15px;line-height:1.5;margin:8px 0 22px}
+.ka .fcard .slot{border:2px dashed var(--line);border-radius:16px;padding:18px;text-align:left}
+.ka .fcard .ok{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 16px;font-size:13px;font-weight:600;margin-top:18px}
+.ka .fcard .ok span:before{content:"✓ ";color:var(--mint)}
+.ka .fcard .lg{font-size:12.5px;color:var(--muted);line-height:1.5;margin-top:14px}
+.ka .final{padding:110px 0;text-align:center}
+.ka .final h2{font-size:clamp(38px,6vw,68px);letter-spacing:-.04em;line-height:.98}
+.ka .final h2 .serif{color:var(--sun)}
+.ka .foot{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.14);margin-top:90px;padding-top:26px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:13px;color:rgba(255,255,255,.55);letter-spacing:.08em}
+@media (max-width:640px){.ka .fcard{padding:30px 20px}.ka .foot{flex-direction:column}}
+</style>
+<div class="ka">
+<section class="dark hero">
+<div class="grid-bg"></div>
+<div class="glow" style="width:760px;height:760px;right:-260px;top:-260px;background:radial-gradient(circle,rgba(255,90,54,.8),transparent 62%)"></div>
+<div class="glow" style="width:900px;height:900px;left:-420px;bottom:-460px;background:radial-gradient(circle,rgba(91,61,245,.85),transparent 62%)"></div>
+<div class="glow" style="width:360px;height:360px;left:44%;top:40%;background:radial-gradient(circle,rgba(255,194,61,.28),transparent 65%)"></div>
+<div class="wrap">
+<div class="top"><div class="brand"><img alt="Kindle Academy" class="ka-logo" height="85" src="data:image/webp;base64,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" width="300"/></div><div class="tag">Free PDF guide</div></div>
+<div class="hero-grid">
+<div>
+<div class="badge"><b>$0 · Free</b>Create with a plan, not by chance</div>
+<h1>Create your first coloring pages <span class="serif">with AI.</span></h1>
+<p class="lead">The free guide that takes you from a vague idea to a <b style="color:#fff">clear concept</b>, a <b style="color:#fff">reusable prompt</b> and a <b style="color:#fff">credible first prototype</b>.</p>
+<div class="chips"><span>Original concept</span><span>Master prompt</span><span>3 to 5 test pages</span></div>
+<div class="cta-row">
+<a class="btn" href="#formulaire">I want the free guide <span>→</span></a>
+<div class="proof"><div class="avatars"><i style="background:linear-gradient(135deg,#FF5A36,#FFC23D)"></i><i style="background:linear-gradient(135deg,#5B3DF5,#A99BFF)"></i><i style="background:linear-gradient(135deg,#27C79A,#5B3DF5)"></i></div><span><b>Free</b> PDF guide · 10 pages</span></div>
+</div>
+<p class="fine">A method for beginners · No income or ranking guaranteed</p>
+</div>
+<div class="mock">
+<div class="back2"></div>
+<div class="cv">
+<div class="cb"><img alt="" src="data:image/webp;base64,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" style="height:18px;width:auto;display:inline-block"/>KINDLE ACADEMY</div>
+<div class="ct">FREE GUIDE</div>
+<div class="ch">Create the first pages of your <em>coloring book</em> <span class="o">with</span> <span class="y">AI</span></div>
+<div class="cs">A simple method to find an original idea, write your prompt and produce a credible prototype.</div>
+<div class="rows"><div><b>30′</b>To a prototype</div><div><b>1</b>Original concept</div><div><b>1</b>Master prompt</div><div><b>3–5</b>Test pages</div></div>
+</div>
+<div class="sticker"><small>GUIDE</small><b>$0</b><small>FREE</small></div>
+<div class="float"><div class="k">GOAL</div><div class="v">A 3- to 5-page prototype to test your idea</div></div>
+</div>
+</div>
+<div class="method">
+<div><b>01</b><h3>Observe</h3><p>Market signals, without copying.</p></div>
+<div><b>02</b><h3>Build</h3><p>A clear, distinctive concept.</p></div>
+<div><b>03</b><h3>Test</h3><p>A few pages before going further.</p></div>
+</div>
+</div>
+</section>
+<section class="sec">
+<div class="wrap">
+<div class="kicker">Why download this guide?</div>
+<h2>Because a good idea <span class="serif">isn’t enough.</span></h2>
+<p class="lead">The real roadblock comes when you have to turn an idea into consistent pages. This guide gives you a short path to check your idea before you spend hours on it — or generate fifty unusable images.</p>
+<div class="blockers"><span>You’re new to AI</span><span>You’re short on time</span><span>Your images lack consistency</span><span>You want to test before investing</span></div>
+<div class="cards4">
+<div class="card"><div class="ic" style="background:var(--coral-soft)">🎯</div><h3>You’ll know exactly what to create</h3><p>You define your audience, their moment, your theme and the expected level of detail in one clear sentence.</p></div>
+<div class="card"><div class="ic" style="background:var(--violet-soft)">🧭</div><h3>You’ll stop guessing at random</h3><p>You understand which variables to change without restarting your whole project every time an image falls short.</p></div>
+<div class="card"><div class="ic" style="background:var(--sun-soft)">🧩</div><h3>You’ll get a consistent series</h3><p>You lock in the style, composition and constraints in a master prompt you can truly reuse.</p></div>
+<div class="card"><div class="ic" style="background:#DFF7EF">✅</div><h3>You’ll make a concrete decision</h3><p>With 3 to 5 pilot pages and a checklist, you’ll know whether your concept deserves to be developed or fixed.</p></div>
+</div>
+<div class="result">
+<div class="glow" style="width:420px;height:420px;right:-140px;top:-180px;background:radial-gradient(circle,rgba(255,90,54,.55),transparent 65%)"></div>
+<div class="n">YOUR RESULT AT THE END</div>
+<p>Not just advice you read and forget: <b>a focused idea, a tailored master prompt</b> and a simple method to validate your first prototype.</p>
+</div>
+</div>
+</section>
+<section class="sec" style="padding-top:0">
+<div class="wrap">
+<div class="kicker">Inside the guide</div>
+<h2>From a vague idea to <span class="serif">your first pages.</span></h2>
+<p class="lead">A guided path to choose a credible idea, turn it into a precise prompt and get a small, consistent prototype — without generating fifty random images.</p>
+<div class="inside">
+<div class="steps">
+<div class="step"><div class="no" style="background:#FF5A36">01</div><div class="body"><h3>Observe what already exists</h3><p>Analyze at least 10 books: themes, audience, level of detail, titles, positive reviews and recurring complaints.</p><span class="out">Spot demand without copying</span></div></div>
+<div class="step"><div class="no" style="background:#E2594A">02</div><div class="body"><h3>Build a distinctive concept</h3><p>Combine audience, moment, theme, level of detail and a visible difference to move past vague ideas.</p><span class="out">The complete concept formula</span></div></div>
+<div class="step"><div class="no" style="background:#C4515D">03</div><div class="body"><h3>Sum up your idea in one sentence</h3><p>Fill in a guided structure so you know exactly who you’re creating for and what experience you want to offer.</p><span class="out">Your direction before generating</span></div></div>
+<div class="step"><div class="no" style="background:#9E4978">04</div><div class="body"><h3>Write your master prompt</h3><p>Define the style, composition, complexity level and elements to avoid so your pages stay truly consistent.</p><span class="out">A template ready to adapt</span></div></div>
+<div class="step"><div class="no" style="background:#7B43A6">05</div><div class="body"><h3>Create 3 to 5 pilot pages</h3><p>Generate scenes one by one, adjust the prompt if needed and stabilize the style before producing more.</p><span class="out">Test small before producing</span></div></div>
+<div class="step"><div class="no" style="background:#5B3DF5">06</div><div class="body"><h3>Decide with a checklist</h3><p>Check readability, outlines, coloring areas, visual consistency and the prototype’s real appeal.</p><span class="out">Quality check in 60 seconds</span></div></div>
+</div>
+<div class="stack">
+<div class="pg"><div class="k">STEP 01</div><div class="big">01</div><h4>Study the market without copying</h4><div class="chk"><i></i><span></span></div><div class="chk"><i></i><span></span></div><div class="chk"><i></i><span style="max-width:70%"></span></div><div class="chk"><i></i><span></span></div><div class="bar" style="margin-top:18px"></div><div class="bar" style="width:80%"></div><div class="bar" style="width:60%"></div></div>
+<div class="pg"><div class="k">STEP 05</div><div class="big">05</div><h4>Check before you continue</h4><div class="chk"><i></i><span></span></div><div class="chk"><i></i><span style="max-width:80%"></span></div><div class="chk"><i></i><span></span></div><div class="chk"><i></i><span style="max-width:65%"></span></div><div class="chk"><i></i><span></span></div><div class="chk"><i></i><span style="max-width:75%"></span></div></div>
+<div class="pg"><div class="k">STEP 03</div><div class="big">03</div><h4>The master prompt to copy</h4><div class="code"><span></span><span class="y"></span><span></span><span style="width:85%"></span><span class="y" style="width:30%"></span><span></span><span style="width:70%"></span></div><div class="chips2"><i style="width:22%;background:#FF5A36"></i><i style="width:24%;background:#E0A000"></i><i style="width:20%;background:#5B3DF5"></i><i style="width:26%;background:#27C79A"></i></div></div>
+<div class="lbl">A LOOK INSIDE THE GUIDE</div>
+</div>
+</div>
+</div>
+</section>
+<section class="sec" style="padding-top:0">
+<div class="wrap">
+<div class="kicker">Included in the PDF</div>
+<h2>Resources <span class="serif">ready to use.</span></h2>
+<div class="incl">
+<div class="card"><div class="thumb" style="background:linear-gradient(135deg,#FF5A36,#FF8A3D)">🔎</div><div class="t"><div class="num">01</div><h3>Competitor research sheet</h3></div></div>
+<div class="card"><div class="thumb" style="background:linear-gradient(135deg,#E0A000,#FFC23D)">🧩</div><div class="t"><div class="num">02</div><h3>Formula to define your concept</h3></div></div>
+<div class="card"><div class="thumb" style="background:linear-gradient(135deg,#5B3DF5,#8468FF)">✍️</div><div class="t"><div class="num">03</div><h3>Master prompt to copy and adapt</h3></div></div>
+<div class="card"><div class="thumb" style="background:linear-gradient(135deg,#12966F,#27C79A)">✅</div><div class="t"><div class="num">04</div><h3>Prototype validation checklist</h3></div></div>
+</div>
+<div class="honest"><div class="ic">i</div><div><b>An honest promise</b>This guide helps you build a solid foundation. Full layout, cover and publishing come next.</div></div>
+<div class="center" style="margin-top:44px"><a class="btn" href="#formulaire">Get the free guide <span>→</span></a></div>
+</div>
+</section>
+<section class="sec" style="padding-top:0">
+<div class="wrap">
+<div class="center">
+<div class="kicker">Sound familiar?</div>
+<h2>Six profiles. <span class="serif">Six very real roadblocks.</span></h2>
+<p class="lead">The guide adapts to your starting point, not to a generic profile.</p>
+</div>
+<div class="personas">
+<div class="persona"><div class="who"><div class="av" style="background:linear-gradient(135deg,#FF5A36,#FF8A3D)">C</div><div><div class="nm">Chloe, 28</div><div class="rl">Creative beginner</div></div></div><q>“She has ideas, but keeps changing direction.”</q><p>She wants to turn a hunch into a clear concept, without getting lost in dozens of niches or creating at random.</p><div class="need"><span>Choose a credible angle before generating.</span></div></div>
+<div class="persona"><div class="who"><div class="av" style="background:linear-gradient(135deg,#5B3DF5,#8468FF)">S</div><div><div class="nm">Sophie, 36</div><div class="rl">Structured project</div></div></div><q>“She wants to do it right, without becoming a tech expert.”</q><p>She’s looking for a guided method, a reusable prompt and a consistent result she can evaluate quickly.</p><div class="need"><span>Move forward with a simple, precise framework.</span></div></div>
+<div class="persona"><div class="who"><div class="av" style="background:linear-gradient(135deg,#E0A000,#FFC23D)">N</div><div><div class="nm">Nadia, 44</div><div class="rl">Demanding creator</div></div></div><q>“She wants to test an idea before spending weeks on it.”</q><p>She prefers to build three to five pilot pages, check the quality, then decide whether the concept is worth pursuing.</p><div class="need"><span>Validate small before producing a lot.</span></div></div>
+<div class="persona"><div class="who"><div class="av" style="background:linear-gradient(135deg,#12966F,#27C79A)">L</div><div><div class="nm">Laura, 31</div><div class="rl">Full-time job, limited time</div></div></div><q>“She only has a few evenings to make progress.”</q><p>Between her job and family life, she can’t test twenty ideas. She wants a clear order: observe, choose, generate, then check.</p><div class="need"><span>Get a first result without spreading herself thin.</span></div></div>
+<div class="persona"><div class="who"><div class="av" style="background:linear-gradient(135deg,#9E4978,#D2574F)">E</div><div><div class="nm">Emily, 39</div><div class="rl">Already tried AI</div></div></div><q>“She’s already generated images, but nothing matches.”</q><p>Line work, framing and level of detail change from one page to the next. She wants to understand what to lock in her prompt.</p><div class="need"><span>Stabilize a reusable visual direction.</span></div></div>
+<div class="persona"><div class="who"><div class="av" style="background:linear-gradient(135deg,#0E0B26,#3B2BD6)">I</div><div><div class="nm">Isabel, 52</div><div class="rl">First book as an author</div></div></div><q>“She wants to turn a creative passion into a real project.”</q><p>She isn’t looking for a promise of easy income: she wants to build a solid first proof of concept before moving on to layout and KDP.</p><div class="need"><span>Go from “I’d love to” to a visible prototype.</span></div></div>
+</div>
+</div>
+</section>
+<section class="sec">
+<div class="wrap">
+<div class="center"><div class="kicker">Frequently asked questions</div><h2>Before you <span class="serif">download.</span></h2></div>
+<div class="faq">
+<details open=""><summary>Is the guide really free?</summary><p>Yes. Just enter your first name and email address to receive it. No payment required.</p></details>
+<details><summary>How will I receive the PDF?</summary><p>By email, automatically, right after you sign up. Check your Promotions or Spam folders if you don’t see it.</p></details>
+<details><summary>Do I need to know how to draw or be good with AI?</summary><p>No. The guide is designed for beginners: it shows you how to focus your idea, then gives you a master prompt to copy — just replace the parts in brackets.</p></details>
+<details><summary>What will I have at the end?</summary><p>An original concept summed up in one sentence, a master prompt tailored to your project and three to five test pages checked against a checklist, so you can decide whether your idea is worth developing.</p></details>
+<details><summary>Will this guide make me money?</summary><p>This guide promises neither instant publishing nor automatic income. It helps you build a solid foundation. Full layout, cover and publishing come next.</p></details>
+</div>
+</div>
+</section>
+<section class="dark formsec" id="formulaire">
+<div class="grid-bg"></div>
+<div class="glow" style="width:620px;height:620px;right:-120px;top:-260px;background:radial-gradient(circle,rgba(255,90,54,.55),transparent 62%)"></div>
+<div class="glow" style="width:700px;height:560px;left:-300px;top:40px;background:radial-gradient(circle,rgba(91,61,245,.6),transparent 62%)"></div>
+<div class="wrap fs-grid" style="position:relative;z-index:2">
+<div class="fs-left">
+<div class="kicker" style="color:var(--sun)">Get the guide for $0</div>
+<h2>Your guide is on its way <span class="serif" style="color:var(--sun)">to your inbox.</span></h2>
+<p class="lead">Enter your first name and email address: the PDF is sent to you automatically, right away.</p>
+<ul class="recap">
+<li><i>✓</i><span><b>Observation sheet</b> to analyze 10 books without copying</span></li>
+<li><i>✓</i><span><b>Concept formula</b> for a clear idea in one sentence</span></li>
+<li><i>✓</i><span><b>Master prompt</b> to copy and adapt</span></li>
+<li><i>✓</i><span><b>Prototype checklist</b> to validate your 3 to 5 pages</span></li>
+</ul>
+<p class="fs-trust">🔒 No payment · Unsubscribe in 1 click</p>
+</div>
+<div aria-hidden="true" class="fs-right"></div>
+</div>
+</section>
+<section class="dark final">
+<div class="grid-bg"></div>
+<div class="glow" style="width:760px;height:760px;right:-280px;top:-300px;background:radial-gradient(circle,rgba(255,90,54,.75),transparent 62%)"></div>
+<div class="glow" style="width:900px;height:900px;left:-420px;bottom:-500px;background:radial-gradient(circle,rgba(91,61,245,.85),transparent 62%)"></div>
+<div class="wrap" style="position:relative;z-index:2">
+<div class="kicker" style="color:var(--sun)">Your turn</div>
+<h2>Your first prototype<br/>starts <span class="serif">today.</span></h2>
+<p class="lead" style="margin:22px auto 38px">A focused idea, a master prompt, three to five test pages. The guide is free.</p>
+<a class="btn" href="#formulaire">I want the free guide <span>→</span></a>
+<div class="foot"><span>© KINDLE ACADEMY · 2026</span><span>A beginner’s method · No income or ranking guaranteed</span></div>
+</div>
+</section>
+</div>
+<style>
+/* === Kindle Academy : habillage du formulaire natif v2 === */
+.ka .fcard,.ka .final{display:none!important}
+#section-2e1eab69,#row-fd24f3fd{padding:0!important;margin:0!important}
+body{background:#0E0B26!important}
+.ka .formsec{padding:80px 0 34px!important}
+.ka .formsec .glow{opacity:.9}
+.ka .formsec h2{font-size:clamp(34px,4.2vw,50px)}
+.ka .fs-grid{text-align:center}
+.ka .formsec .recap{list-style:none;margin:26px auto 0;max-width:560px;display:flex;flex-direction:column;gap:10px;text-align:left}
+.ka .formsec .recap li{display:flex;gap:14px;align-items:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);border-radius:14px;padding:12px 16px;font-size:15.5px;color:rgba(255,255,255,.78)}
+.ka .formsec .recap li b{color:#fff;font-weight:600}
+.ka .fs-trust{margin-top:18px;font-size:13.5px;color:rgba(255,255,255,.55);letter-spacing:.02em}
+#section-fa89ae34{background:radial-gradient(640px 460px at 100% 100%,rgba(255,90,54,.22),transparent 70%),radial-gradient(700px 500px at 0% 100%,rgba(91,61,245,.3),transparent 70%),#0E0B26!important;padding:0 18px 90px!important;margin:0!important;position:relative!important;z-index:3!important}
+#section-fa89ae34>div{max-width:1160px!important;width:100%!important;margin:0 auto!important}
+#row-f3325521{display:block!important;max-width:540px!important;margin:0 auto!important;padding:0!important}
+#row-f3325521>div:first-child{display:none!important}
+#row-f3325521>div:last-child{width:100%!important;max-width:100%!important;flex:none!important;border-radius:26px!important;padding:32px 30px 24px!important;box-shadow:0 40px 90px rgba(0,0,0,.5)!important;border:3px solid transparent!important;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,#FF5A36,#FFC23D,#5B3DF5) border-box!important}
+#row-f3325521>div:last-child:before{content:"★ Free PDF guide · $0";display:block;width:max-content;margin:0 auto;background:#FFF4D6;color:#9A6A00;font:700 12px/1 "Space Grotesk",sans-serif;letter-spacing:.16em;text-transform:uppercase;padding:8px 14px;border-radius:40px}
+#row-f3325521>div:last-child>div{margin:0!important}
+#row-f3325521>div:last-child>div:nth-child(1){display:none!important}
+#row-f3325521>div:last-child>div:nth-child(2)>*{display:none!important}
+#row-f3325521>div:last-child>div:nth-child(2):before{content:"Download the free guide";display:block;text-align:center;font:700 26px/1.15 "Space Grotesk",sans-serif;letter-spacing:-.02em;color:#0E0B26;margin-top:14px}
+#row-f3325521>div:last-child>div:nth-child(2):after{content:"10 pages · sent instantly by email";display:block;text-align:center;font:400 14.5px/1.5 Inter,sans-serif;color:#6B6780;margin:6px 0 20px}
+#row-f3325521>div:last-child>div:nth-child(4){margin-top:12px!important}
+#row-f3325521>div:last-child>div:nth-child(5){margin-top:16px!important}
+#row-f3325521>div:last-child>div:nth-child(6){margin-top:14px!important}
+#text-dc3892ae,#text-9d4768b1{display:none!important}
+:is(#field-14237cba,#form-input-14237cba),:is(#field-86eb6281,#form-input-86eb6281){background:#FBF8F3!important;border:1.5px solid #E6E0D6!important;border-radius:14px!important;font:400 17px Inter,system-ui,sans-serif!important;color:#1B1830!important;padding:16px 18px!important;height:auto!important;box-shadow:none!important}
+:is(#field-14237cba,#form-input-14237cba):focus,:is(#field-86eb6281,#form-input-86eb6281):focus{border-color:#5B3DF5!important;outline:none!important}
+#button-6330557e{background:linear-gradient(90deg,#FF5A36,#FF8A3D)!important;border:0!important;border-radius:60px!important;box-shadow:0 14px 34px rgba(255,90,54,.4)!important;font-size:0!important;padding:19px 20px!important;height:auto!important;min-height:0!important;line-height:1!important;margin:0!important;width:100%!important}
+#button-6330557e *{font-size:0!important}
+#button-6330557e:after{content:"Get my free guide →";font:700 18px "Space Grotesk",sans-serif;color:#fff;letter-spacing:.02em}
+#text-c1cbc444,#text-c1cbc444 *{font-family:Inter,system-ui,sans-serif!important;font-size:12.5px!important;line-height:1.5!important;color:#6B6780!important;text-align:center!important}
+#text-c1cbc444 a,#text-c1cbc444 a *{color:#5B3DF5!important}
+#text-c1cbc444:before{content:"✓ 100% free   ✓ Sent by email   ✓ Unsubscribe in 1 click";display:block;white-space:pre;font:600 13px Inter,sans-serif;color:#0E0B26;margin:0 0 8px;text-align:center}
+#section-7b038da7{background:#0E0B26!important;border-top:1px solid rgba(255,255,255,.1)!important;padding:22px 18px!important;margin:0!important}
+#section-7b038da7 a,#section-7b038da7 a span,#section-7b038da7 p{color:rgba(255,255,255,.55)!important;font-family:Inter,system-ui,sans-serif!important;font-size:12.5px!important;font-weight:600!important;letter-spacing:.14em!important;text-decoration:none!important}
+#section-7b038da7 a:hover span{color:#fff!important}
+@media(min-width:1000px){
+ .ka .formsec{height:640px;padding:90px 0 0!important}
+ .ka .fs-grid{display:grid;grid-template-columns:1fr 500px;gap:64px;align-items:start;text-align:left}
+ .ka .fs-left .lead{margin-left:0}
+ .ka .formsec .recap{margin-left:0}
+ #section-fa89ae34{margin-top:-550px!important;background:transparent!important;padding:0 24px 70px!important}
+ #row-f3325521{max-width:1112px!important;display:flex!important;justify-content:flex-end!important}
+ #row-f3325521>div:last-child{width:500px!important;max-width:500px!important}
+}
+@media(max-width:640px){#button-6330557e:after{font-size:16px}#text-c1cbc444:before{font-size:12px!important}.ka .formsec{padding:64px 0 28px!important}#row-f3325521>div:last-child{padding:26px 18px 20px!important}#text-c1cbc444:before{white-space:normal}}
+</style>
+<style>.ka .brand .ka-logo{height:48px;width:auto;display:block}@media(max-width:640px){.ka .brand .ka-logo{height:38px}}</style>
