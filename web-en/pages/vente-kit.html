@@ -1,0 +1,463 @@
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* ===== Kindle Academy · système visuel commun ===== */
+section:has(.ka),[id^="row-"]:has(.ka),[id^="column-"]:has(.ka),[id^="rawhtml-"]:has(.ka){padding:0!important;margin:0!important;max-width:none!important;width:100%!important}
+[id^="rawhtml-"]:has(.ka)>h2:first-child{display:none!important}
+body{background:#0E0B26!important}
+.ka{--ink:#0E0B26;--ink2:#1A1545;--violet:#5B3DF5;--violet-soft:#EDE9FF;--coral:#FF5A36;--coral-soft:#FFE9E2;--sun:#FFC23D;--sun-soft:#FFF4D6;--mint:#27C79A;--mint-soft:#DDF6EE;--paper:#FBF8F3;--line:#E6E0D6;--text:#1B1830;--muted:#6B6780;
+ font-family:Inter,system-ui,sans-serif;color:var(--text);font-size:17px;line-height:1.6;background:var(--paper);-webkit-font-smoothing:antialiased;overflow-x:hidden;width:100%;text-align:left}
+.ka *{box-sizing:border-box;margin:0;padding:0}
+.ka img{max-width:100%;display:block}
+.ka a{color:inherit;text-decoration:none}
+.ka ul{list-style:none}
+.ka .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.ka .narrow{max-width:860px}
+.ka .serif{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;letter-spacing:-.01em}
+.ka h1,.ka h2,.ka h3,.ka h4{font-family:"Space Grotesk",sans-serif;letter-spacing:-.03em;line-height:1.05;color:inherit;font-weight:700}
+.ka h2{font-size:clamp(34px,5vw,54px)}
+.ka h2 .serif{color:var(--violet)}
+.ka .dark h2 .serif{color:var(--sun)}
+.ka h3{font-size:20px;letter-spacing:-.01em;line-height:1.25}
+.ka .kicker{font-family:"Space Grotesk";font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--coral);display:inline-flex;align-items:center;gap:10px;margin-bottom:18px}
+.ka .kicker:before{content:"";width:24px;height:2px;background:currentColor}
+.ka .dark .kicker{color:var(--sun)}
+.ka .lead{font-size:19px;color:#3A3652;max-width:680px;margin-top:18px}
+.ka .center{text-align:center}.ka .center .lead{margin-left:auto;margin-right:auto}
+.ka section{position:relative}
+.ka .sec{padding:110px 0}
+.ka .sec.tight{padding:80px 0}
+.ka .white{background:#fff}
+/* boutons */
+.ka .btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:linear-gradient(90deg,var(--coral),#FF8A3D);color:#fff;font-family:"Space Grotesk";font-weight:700;font-size:18px;letter-spacing:.02em;padding:20px 34px;border-radius:60px;box-shadow:0 16px 40px rgba(255,90,54,.4);transition:transform .2s,box-shadow .2s;text-align:center;line-height:1.2;border:0;cursor:pointer}
+.ka .btn:hover{transform:translateY(-2px);box-shadow:0 22px 50px rgba(255,90,54,.5)}
+.ka .btn span{font-size:22px;transition:transform .2s}.ka .btn:hover span{transform:translateX(4px)}
+.ka .btn.dl span{font-size:20px}.ka .btn.dl:hover span{transform:translateY(3px)}
+.ka .btn.big{font-size:20px;padding:24px 40px}
+.ka .btn.violet{background:linear-gradient(90deg,var(--violet),#8A6BFF);box-shadow:0 16px 40px rgba(91,61,245,.4)}
+.ka .ghost{display:inline-flex;align-items:center;gap:8px;font-family:"Space Grotesk";font-weight:700;font-size:15px;letter-spacing:.04em;color:inherit;opacity:.75;border-bottom:1px solid currentColor;padding-bottom:2px}
+.ka .ghost:hover{opacity:1}
+/* sections sombres */
+.ka .dark{background:var(--ink);color:#fff;overflow:hidden}
+.ka .dark .lead{color:rgba(255,255,255,.78)}
+.ka .glow{position:absolute;border-radius:50%;pointer-events:none}
+.ka .grid-bg{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:linear-gradient(180deg,#000,transparent 85%);mask-image:linear-gradient(180deg,#000,transparent 85%)}
+.ka .z{position:relative;z-index:2}
+/* barre du haut */
+.ka .top{position:relative;z-index:3;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 0}
+.ka .brand img{height:48px;width:auto}
+.ka .top .tag{font-family:"Space Grotesk";font-size:13px;letter-spacing:.16em;text-transform:uppercase;border:1px solid rgba(255,255,255,.28);padding:8px 16px;border-radius:40px;white-space:nowrap;display:inline-flex;align-items:center;gap:8px}
+.ka .top a.tag:hover{background:rgba(255,255,255,.08)}
+.ka .top .tag .lock{color:var(--mint)}
+/* héros */
+.ka .hero{padding:20px 0 110px}
+.ka .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center;margin-top:40px}
+.ka .badge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);padding:7px 16px 7px 8px;border-radius:40px;font-family:"Space Grotesk";font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+.ka .badge b{background:var(--coral);padding:3px 10px;border-radius:30px;letter-spacing:.06em;color:#fff}
+.ka .badge b.ok{background:var(--mint);color:var(--ink)}
+.ka .hero h1{font-size:clamp(42px,6vw,76px);letter-spacing:-.045em;line-height:.95;margin-top:26px}
+.ka .hero h1 .serif{color:var(--sun);font-size:1.08em}
+.ka .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.ka .chips span{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);padding:9px 16px;border-radius:40px;font-size:15px;font-weight:500}
+.ka .chips span:before{content:"✓";color:var(--mint);font-weight:700;margin-right:8px}
+.ka .cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:22px 28px;margin-top:38px}
+.ka .price-tag{display:flex;align-items:baseline;gap:10px}
+.ka .price-tag b{font-family:"Space Grotesk";font-size:44px;letter-spacing:-.04em;line-height:1}
+.ka .price-tag span{font-size:14px;line-height:1.25;color:rgba(255,255,255,.7)}
+.ka .fine{margin-top:18px;font-size:13.5px;color:rgba(255,255,255,.58);letter-spacing:.02em}
+/* maquette livre */
+.ka .book{position:relative;justify-self:center;width:100%;max-width:400px}
+.ka .book .cover{position:relative;z-index:2;border-radius:12px;box-shadow:0 40px 80px rgba(0,0,0,.55),0 0 0 8px rgba(255,255,255,.07);transform:rotate(4deg)}
+.ka .book .pg{position:absolute;z-index:1;width:78%;border-radius:10px;box-shadow:0 30px 60px rgba(0,0,0,.45)}
+.ka .book .pg.a{left:-18%;top:8%;transform:rotate(-9deg)}
+.ka .book .pg.b{right:-14%;top:16%;transform:rotate(12deg)}
+.ka .sticker{position:absolute;left:-38px;top:-26px;width:124px;height:124px;border-radius:50%;background:var(--sun);color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(-12deg);font-family:"Space Grotesk";font-weight:700;line-height:1;text-align:center;z-index:4;box-shadow:0 16px 36px rgba(0,0,0,.35)}
+.ka .sticker small{font-size:11px;letter-spacing:.16em}
+.ka .sticker b{font-size:38px;letter-spacing:-.04em;margin:4px 0}
+.ka .float{position:absolute;right:-26px;bottom:30px;z-index:4;background:#fff;color:var(--ink);border-radius:16px;padding:14px 18px;box-shadow:0 20px 40px rgba(0,0,0,.35);max-width:220px}
+.ka .float .k{font-family:"Space Grotesk";font-size:11px;letter-spacing:.16em;font-weight:700;color:var(--violet);text-transform:uppercase}
+.ka .float .v{font-family:"Space Grotesk";font-weight:700;font-size:17px;line-height:1.2;margin-top:4px}
+/* cartes */
+.ka .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.ka .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.ka .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.ka .card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px}
+.ka .card p{color:#4A4660;margin-top:8px;font-size:16px}
+.ka .ic{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px;font-family:"Space Grotesk";font-weight:700}
+.ka .ic.c{background:var(--coral-soft);color:var(--coral)}.ka .ic.v{background:var(--violet-soft);color:var(--violet)}.ka .ic.s{background:var(--sun-soft);color:#B07800}.ka .ic.m{background:var(--mint-soft);color:#138A69}
+.ka .num{font-family:"Space Grotesk";font-weight:700;font-size:14px;letter-spacing:.14em;color:var(--coral)}
+.ka .dcard{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:26px}
+.ka .dcard p{color:rgba(255,255,255,.7);font-size:15.5px;margin-top:6px}
+.ka .stat b{font-family:"Space Grotesk";font-size:40px;letter-spacing:-.04em;display:block;line-height:1}
+.ka .stat span{display:block;font-size:14.5px;margin-top:8px;color:rgba(255,255,255,.7)}
+/* étapes */
+.ka .steps{display:flex;flex-direction:column;gap:14px;position:relative}
+.ka .steps:before{content:"";position:absolute;left:27px;top:30px;bottom:30px;width:2px;background:linear-gradient(180deg,var(--coral),var(--violet))}
+.ka .step{display:flex;gap:22px;align-items:flex-start;position:relative}
+.ka .step .no{flex:0 0 56px;height:56px;border-radius:16px;color:#fff;font-family:"Space Grotesk";font-weight:700;font-size:19px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 5px var(--paper)}
+.ka .white .step .no{box-shadow:0 0 0 5px #fff}
+.ka .step .body{flex:1;background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px 24px}
+.ka .step p{color:#4A4660;font-size:15.5px;margin-top:6px}
+.ka .step .out{display:inline-block;margin-top:12px;font-family:"Space Grotesk";font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--violet);background:var(--violet-soft);padding:5px 12px;border-radius:30px}
+.ka .bg-c{background:var(--coral)}.ka .bg-s{background:var(--sun);color:var(--ink)!important}.ka .bg-v{background:var(--violet)}.ka .bg-m{background:var(--mint);color:var(--ink)!important}
+/* listes */
+.ka .checks li{position:relative;padding-left:32px;margin-top:12px}
+.ka .checks li:before{content:"✓";position:absolute;left:0;top:1px;width:22px;height:22px;border-radius:50%;background:var(--mint);color:var(--ink);font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center}
+.ka .crosses li{position:relative;padding-left:32px;margin-top:12px}
+.ka .crosses li:before{content:"×";position:absolute;left:0;top:1px;width:22px;height:22px;border-radius:50%;background:var(--coral-soft);color:var(--coral);font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;line-height:1}
+/* bandeau d'info */
+.ka .note{display:flex;gap:18px;align-items:center;background:var(--violet-soft);border-radius:18px;padding:22px 26px}
+.ka .note .i{flex:0 0 44px;height:44px;border-radius:50%;background:var(--violet);color:#fff;display:flex;align-items:center;justify-content:center;font-family:"Space Grotesk";font-weight:700;font-size:20px}
+.ka .note b{font-family:"Space Grotesk";letter-spacing:.14em;text-transform:uppercase;font-size:13px;display:block;color:var(--ink)}
+.ka .note p{color:#3A3652;font-size:15.5px}
+/* FAQ */
+.ka .faq{max-width:820px;margin:44px auto 0;display:flex;flex-direction:column;gap:12px}
+.ka .faq details{background:#fff;border:1px solid var(--line);border-radius:18px;padding:0 26px}
+.ka .faq summary{cursor:pointer;list-style:none;padding:22px 0;font-family:"Space Grotesk";font-weight:700;font-size:19px;display:flex;justify-content:space-between;gap:20px;align-items:center}
+.ka .faq summary::-webkit-details-marker{display:none}
+.ka .faq summary:after{content:"+";flex:0 0 34px;height:34px;border-radius:50%;background:var(--violet-soft);color:var(--violet);display:flex;align-items:center;justify-content:center;font-size:22px;transition:transform .2s}
+.ka .faq details[open] summary:after{transform:rotate(45deg);background:var(--violet);color:#fff}
+.ka .faq details p{padding:0 0 22px;color:#4A4660}
+/* pied de page */
+.ka .foot{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.14);padding:26px 0 30px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;font-size:13px;color:rgba(255,255,255,.55);letter-spacing:.08em}
+.ka .foot nav{display:flex;gap:22px;flex-wrap:wrap}
+.ka .foot a:hover{color:#fff}
+.ka .foot img{height:26px;width:auto;opacity:.9}
+.ka footer.dark{padding:0}
+@media (max-width:960px){
+ .ka .hero-grid{grid-template-columns:1fr;gap:60px}
+ .ka .book{max-width:320px;margin-top:10px}
+ .ka .grid4{grid-template-columns:repeat(2,1fr)}
+ .ka .grid3{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+ .ka{font-size:16px}
+ .ka .sec{padding:76px 0}.ka .sec.tight{padding:60px 0}
+ .ka .wrap{padding:0 18px}
+ .ka .top{padding:18px 0}
+ .ka .brand img{height:38px}
+ .ka .top .tag{display:none}
+ .ka .grid2,.ka .grid3,.ka .grid4{grid-template-columns:1fr}
+ .ka .btn{width:100%;padding:19px 22px}
+ .ka .btn.big{font-size:18px;padding:21px 22px}
+ .ka .sticker{left:-12px;width:100px;height:100px}.ka .sticker b{font-size:30px}
+ .ka .float{right:-8px}
+ .ka .book .pg{display:none}
+ .ka .badge{font-size:11px;letter-spacing:.1em}
+ .ka .step .no{flex-basis:46px;height:46px;font-size:16px}.ka .steps:before{left:22px}
+ .ka .step .body{padding:18px}
+ .ka .note{flex-direction:column;align-items:flex-start}
+ .ka .foot{flex-direction:column;align-items:flex-start}
+}
+</style>
+<style>
+.ka .sk-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:90px}
+.ka .sk-stats .dcard b{color:var(--coral)}.ka .sk-stats .dcard:nth-child(2) b{color:var(--sun)}.ka .sk-stats .dcard:nth-child(3) b{color:#A99BFF}.ka .sk-stats .dcard:nth-child(4) b{color:var(--mint)}
+.ka .sk-hero .book .cover{transform:rotate(3deg)}
+.ka .sk-hero h1{font-size:clamp(40px,5.4vw,68px)}
+.ka .head2{display:flex;justify-content:space-between;align-items:flex-end;gap:14px 50px;flex-wrap:wrap;margin-bottom:46px}
+.ka .head2 .lead{max-width:430px;margin-top:0;font-size:17px;color:var(--muted)}
+.ka .dark .head2 .lead{color:rgba(255,255,255,.7)}
+.ka .pb .card .num{display:block;margin-bottom:18px;font-size:44px;letter-spacing:-.04em;line-height:1}
+.ka .pb .card:nth-child(2) .num{color:#E9A800}.ka .pb .card:nth-child(3) .num{color:var(--violet)}
+.ka .promise{margin-top:22px;background:var(--ink);color:#fff;border-radius:22px;padding:32px 38px;display:flex;gap:30px;align-items:center;position:relative;overflow:hidden}
+.ka .promise .n{font-family:"Space Grotesk";font-weight:700;font-size:14px;letter-spacing:.2em;color:var(--sun);white-space:nowrap;text-transform:uppercase}
+.ka .promise p{font-family:"Instrument Serif";font-style:italic;font-size:24px;line-height:1.35}
+.ka .vs{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:46px}
+.ka .vs .col{border-radius:24px;padding:34px}
+.ka .vs .no{background:#fff;border:1px solid var(--line)}
+.ka .vs .yes{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.ka .vs .yes:before{content:"";position:absolute;width:420px;height:420px;right:-160px;top:-180px;border-radius:50%;background:radial-gradient(circle,rgba(91,61,245,.55),transparent 65%)}
+.ka .vs .yes>*{position:relative}
+.ka .vs .lab{display:inline-block;font-family:"Space Grotesk";font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;padding:6px 12px;border-radius:30px;margin-bottom:16px}
+.ka .vs .no .lab{background:var(--coral-soft);color:var(--coral)}.ka .vs .yes .lab{background:var(--mint);color:var(--ink)}
+.ka .vs h3{font-size:24px}
+.ka .vs li{font-size:16px}
+.ka .vs .no li{color:#4A4660}
+.ka .ctabar{margin-top:22px;display:flex;justify-content:space-between;align-items:center;gap:20px 40px;flex-wrap:wrap;background:var(--sun-soft);border:1px solid #F4DFA6;border-radius:22px;padding:26px 30px}
+.ka .ctabar b{font-family:"Space Grotesk";font-size:20px;letter-spacing:-.01em;display:block;color:var(--ink)}
+.ka .ctabar p{color:#5A5470;font-size:15px;margin-top:2px}
+.ka .ctabar .btn{padding:17px 28px;font-size:16px}
+.ka .files .card{padding:26px}
+.ka .files .ft{display:inline-block;font-family:"Space Grotesk";font-size:12px;letter-spacing:.14em;font-weight:700;padding:5px 10px;border-radius:8px;margin-bottom:16px}
+.ka .files .card:nth-child(1) .ft{background:var(--coral-soft);color:var(--coral)}.ka .files .card:nth-child(2) .ft{background:var(--violet-soft);color:var(--violet)}.ka .files .card:nth-child(3) .ft{background:var(--mint-soft);color:#138A69}.ka .files .card:nth-child(4) .ft{background:var(--sun-soft);color:#9A6A00}
+.ka .mods{margin-top:60px}
+.ka .mods h3.t{font-size:26px;margin-bottom:22px;letter-spacing:-.02em}
+.ka .mods .grid3 .card{display:flex;gap:18px;align-items:flex-start;padding:24px}
+.ka .mods .grid3 .card .num{flex:0 0 auto;font-size:30px;letter-spacing:-.04em;line-height:1}
+.ka .mods .grid3 .card h4{font-size:18px;letter-spacing:-.01em}
+.ka .mods .grid3 .card p{font-size:15px;margin-top:4px}
+.ka .gal{position:relative;z-index:2;display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin-top:10px}
+.ka .gal figure{margin:0}
+.ka .gal img{border-radius:10px;box-shadow:0 26px 50px rgba(0,0,0,.5);transition:transform .25s}
+.ka .gal figure:nth-child(odd) img{transform:rotate(-2deg)}.ka .gal figure:nth-child(even) img{transform:rotate(2deg) translateY(18px)}
+.ka .gal figure:hover img{transform:scale(1.05)}
+.ka .gal figcaption{margin-top:30px;font-size:13.5px;color:rgba(255,255,255,.65);text-align:center;line-height:1.35}
+.ka .how .grid4 .card{position:relative;padding:28px 24px}
+.ka .how .grid4 .card .no{width:48px;height:48px;border-radius:14px;color:#fff;font-family:"Space Grotesk";font-weight:700;font-size:18px;display:flex;align-items:center;justify-content:center;margin-bottom:22px}
+.ka .how .grid4 .card p{font-size:15px}
+.ka .fit .col{background:#fff;border:1px solid var(--line);border-radius:24px;padding:34px}
+.ka .fit .col h3{font-size:23px}
+.ka .fit .col li{color:#4A4660;font-size:16px}
+.ka .fit .col.ok{border-top:5px solid var(--mint)}.ka .fit .col.ko{border-top:5px solid var(--coral)}
+.ka .revs .grid3{margin-top:46px}
+.ka .rev{display:flex;flex-direction:column}
+.ka .rev .stars{color:#F5B301;font-size:18px;letter-spacing:2px}
+.ka .rev .who{display:flex;align-items:center;gap:12px;margin-top:16px}
+.ka .rev .av{flex:0 0 44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:"Space Grotesk";font-weight:700;color:#fff}
+.ka .rev .nm{font-family:"Space Grotesk";font-weight:700;font-size:16px;line-height:1.1}
+.ka .rev .rl{font-size:13px;color:var(--muted)}
+.ka .rev h3{margin-top:18px;font-size:19px}
+.ka .rev q{display:block;quotes:none;margin-top:10px;color:#4A4660;font-size:15.5px;line-height:1.6}
+.ka .rev small{margin-top:auto;padding-top:16px;font-size:12.5px;font-weight:600;color:#138A69}
+.ka .revs .score{display:inline-flex;align-items:center;gap:12px;margin-top:18px;background:#fff;border:1px solid var(--line);border-radius:40px;padding:8px 18px;font-size:14.5px;font-weight:600}
+.ka .revs .score b{color:#F5B301;letter-spacing:2px}
+.ka .end .grid4 .dcard b.big{display:block;font-family:"Space Grotesk";font-size:17px;line-height:1.25;margin-top:14px}
+.ka .end .grid4 .dcard .e{font-size:30px}
+.ka .offer{position:relative;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:0;border-radius:30px;overflow:hidden;background:#fff;color:var(--ink);box-shadow:0 50px 100px rgba(0,0,0,.45)}
+.ka .offer .l{padding:50px}
+.ka .offer .l h2{font-size:clamp(30px,3.6vw,42px)}
+.ka .offer .l h2 .serif{color:var(--violet)}.ka .offer .l .kicker{color:var(--coral)}
+.ka .offer .l .lead{font-size:17px;color:#4A4660}
+.ka .offer .inc{display:grid;grid-template-columns:1fr 1fr;gap:4px 24px;margin-top:22px}
+.ka .offer .inc li{font-size:15.5px;margin-top:10px}
+.ka .offer .l small{display:block;margin-top:26px;font-size:12.5px;color:var(--muted);line-height:1.5}
+.ka .offer .r{background:linear-gradient(160deg,#1A1545,#0E0B26);color:#fff;padding:50px 40px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
+.ka .offer .r:before{content:"";position:absolute;width:420px;height:420px;right:-180px;top:-200px;border-radius:50%;background:radial-gradient(circle,rgba(255,90,54,.55),transparent 62%)}
+.ka .offer .r>*{position:relative}
+.ka .offer .r img{width:170px;border-radius:10px;box-shadow:0 26px 50px rgba(0,0,0,.5);transform:rotate(-3deg);margin-bottom:26px}
+.ka .offer .r .p{font-family:"Space Grotesk";font-weight:700;font-size:72px;letter-spacing:-.05em;line-height:1}
+.ka .offer .r .p small{font-size:.5em}
+.ka .offer .r .s{font-size:14px;color:rgba(255,255,255,.65);margin:8px 0 26px}
+.ka .offer .r .btn{width:100%}
+.ka .offer .r .sec3{margin-top:18px;display:flex;flex-direction:column;gap:6px;font-size:13.5px;color:rgba(255,255,255,.75)}
+.ka .offer .r .sec3 span:before{content:"✓ ";color:var(--mint);font-weight:700}
+.ka .final{padding:110px 0 0;text-align:center}
+.ka .final h2{font-size:clamp(38px,6vw,68px);letter-spacing:-.04em;line-height:.98}
+.ka .final .foot{margin-top:100px}.ka .final .lead{margin-left:auto;margin-right:auto}
+@media (max-width:960px){.ka .sk-stats{grid-template-columns:repeat(2,1fr)}.ka .vs{grid-template-columns:1fr}.ka .gal{grid-template-columns:repeat(3,1fr)}.ka .offer{grid-template-columns:1fr}}
+@media (max-width:640px){
+ .ka .sk-stats{margin-top:60px;gap:10px}.ka .sk-stats .dcard{padding:18px}.ka .sk-stats .stat b{font-size:30px}
+ .ka .promise{flex-direction:column;align-items:flex-start;padding:26px}.ka .promise p{font-size:20px}
+ .ka .vs .col,.ka .fit .col{padding:26px}
+ .ka .ctabar .btn{width:100%}
+ .ka .gal{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 4px 20px;margin:0 -18px;padding-left:18px}
+ .ka .gal figure{flex:0 0 58%;scroll-snap-align:start}
+ .ka .gal figure img{transform:none!important}
+ .ka .offer .l{padding:30px 22px}.ka .offer .inc{grid-template-columns:1fr}.ka .offer .r{padding:40px 22px}
+ .ka .end .grid4{grid-template-columns:1fr 1fr;gap:10px}.ka .end .grid4 .dcard{padding:18px}.ka .end .grid4 .dcard b.big{font-size:15px}.ka .end .grid4 .dcard p{font-size:13.5px}
+ .ka .final{padding-top:80px}.ka .final .foot{margin-top:70px}
+ .ka .top .tag.show{display:inline-flex;font-size:11px;padding:7px 12px}
+}
+</style>
+<div class="ka" id="haut">
+<section class="dark hero sk-hero">
+<div class="grid-bg"></div>
+<div class="glow" style="width:780px;height:780px;right:-260px;top:-300px;background:radial-gradient(circle,rgba(255,90,54,.55),transparent 62%)"></div>
+<div class="glow" style="width:860px;height:720px;left:-380px;top:260px;background:radial-gradient(circle,rgba(91,61,245,.6),transparent 62%)"></div>
+<div class="wrap">
+<div class="top"><div class="brand"><img alt="Kindle Academy" height="85" src="https://d1yei2z3i6k35z.cloudfront.net/19098110/6ab7e27ae0d305.32926177_ka-logo.webp" width="300"/></div><a class="tag show" href="/order-kdp-express-kit">Get the Kit →</a></div>
+<div class="hero-grid">
+<div>
+<span class="badge"><b>Done-for-you kit</b>2026 Edition</span>
+<h1>From a few test pages to a book <span class="serif">that’s truly KDP-ready.</span></h1>
+<p class="lead">A practical method to build your interior, prepare your full cover and check your files before publishing, <b style="color:#fff">without guessing at dimensions, margins or structure.</b></p>
+<div class="chips"><span>10 advanced prompts</span><span>KDP specs and templates</span><span>100-page plan</span><span>15-step checklist</span></div>
+<div class="cta-row">
+<a class="btn big" href="/order-kdp-express-kit">Get the Kit <span>→</span></a>
+<div class="price-tag"><b>$27</b><span>one-time payment<br/>instant access</span></div>
+</div>
+<p class="fine">Instant download · no subscription · 14-day action guarantee</p>
+</div>
+<div class="book">
+<img alt="" class="pg a" loading="lazy" src="https://cdn.jsdelivr.net/gh/kindleacademy/kindle-academy-social@59224914ac2405e9ac56213421f9ae2c515da8b7/web-en/img/kit-p17.webp"/>
+<img alt="" class="pg b" loading="lazy" src="https://cdn.jsdelivr.net/gh/kindleacademy/kindle-academy-social@59224914ac2405e9ac56213421f9ae2c515da8b7/web-en/img/kit-p8.webp"/>
+<img alt="KDP Express Launch Kit cover" class="cover" src="https://cdn.jsdelivr.net/gh/kindleacademy/kindle-academy-social@59224914ac2405e9ac56213421f9ae2c515da8b7/web-en/img/kit-cover.webp"/>
+<div class="sticker"><small>COMPLETE</small><b>$27</b><small>PACK</small></div>
+<div class="float"><div class="k">Concrete goal</div><div class="v">An interior PDF + a cover PDF, ready to check</div></div>
+</div>
+</div>
+<div class="sk-stats">
+<div class="dcard stat"><b>40 pages</b><span>A dense, action-focused manual.</span></div>
+<div class="dcard stat"><b>10 prompts</b><span>Ready-made directions to adapt to your niche.</span></div>
+<div class="dcard stat"><b>100 pages</b><span>A precise page plan to structure the book.</span></div>
+<div class="dcard stat"><b>15 checks</b><span>A final review before you go live.</span></div>
+</div>
+</div>
+</section>
+<section class="sec pb">
+<div class="wrap">
+<div class="head2">
+<div><div class="kicker">Creating is only part of the work</div><h2>A good idea isn’t enough <span class="serif">to make a publishable book.</span></h2></div>
+<p class="lead">After the first pages, there’s still everything that turns a series of images into a real, printable book.</p>
+</div>
+<div class="grid3">
+<div class="card"><span class="num">01</span><h3>The wrong format</h3><p>A page size, resolution or bleed set up wrong can trigger errors as soon as you upload.</p></div>
+<div class="card"><span class="num">02</span><h3>An inconsistent series</h3><p>Without structure or a reference page, the style, details and composition shift from one page to the next.</p></div>
+<div class="card"><span class="num">03</span><h3>The cover too early</h3><p>The spine depends on the final interior file: page count, paper and trim size.</p></div>
+</div>
+<div class="promise"><span class="n">An honest promise</span><p>The Kit doesn’t promise rankings or automatic sales. It gives you a repeatable method to reduce technical errors and prepare files you can actually check in the KDP previewer.</p></div>
+</div>
+</section>
+<section class="sec white">
+<div class="wrap">
+<div class="center"><div class="kicker">What changes with a method</div><h2>You stop <span class="serif">publishing blind.</span></h2><p class="lead">Every decision comes in the right order: concept, generation, interior, cover, check.</p></div>
+<div class="vs">
+<div class="col no"><span class="lab">Without a method</span><h3>Files pieced together at the last minute</h3><ul class="crosses">
+<li>Dimensions picked without checking the final format</li><li>Different prompts for every illustration</li><li>Cover made before knowing the spine width</li><li>Text and legal pages made up on the fly</li><li>Checks only after a KDP error</li></ul></div>
+<div class="col yes"><span class="lab">With the Kit</span><h3>A clear path all the way to your final files</h3><ul class="checks">
+<li>Format, margins and resolution set before production</li><li>Style guide and master prompt locked in</li><li>Interior finalized before calculating the cover</li><li>100-page plan and essential text prepared</li><li>Full checklist before going live</li></ul></div>
+</div>
+<div class="ctabar"><div><b>Go straight from idea to action plan.</b><p>The Kit lays out the technical decisions in the order you actually need to make them.</p></div><a class="btn" href="/order-kdp-express-kit">Get the Kit · $27 <span>→</span></a></div>
+</div>
+</section>
+<section class="sec">
+<div class="wrap">
+<div class="head2">
+<div><div class="kicker">Everything you get</div><h2>An organized pack, <span class="serif">not a lone PDF.</span></h2></div>
+<p class="lead">Every file has a specific job: you know where to start and what to check.</p>
+</div>
+<div class="grid4 files">
+<div class="card"><span class="ft">PDF</span><h3>Start here</h3><p>Getting started and the recommended order for using all the resources.</p></div>
+<div class="card"><span class="ft">PDF · 40 PAGES</span><h3>The main manual</h3><p>The complete method, from prompts to the cover and the final check.</p></div>
+<div class="card"><span class="ft">XLSX</span><h3>The practical templates</h3><p>Four sheets: Concept, Prompts, Preflight and Dimensions, to fill in as you work.</p></div>
+<div class="card"><span class="ft">TXT</span><h3>License</h3><p>The Kit’s terms of use and the limits to know before you start.</p></div>
+</div>
+<div class="mods">
+<h3 class="t">Inside the main manual</h3>
+<div class="grid3">
+<div class="card"><span class="num">01</span><div><h4>Prompt library</h4><p>A master prompt, a consistency method and 10 ready-to-adapt directions.</p></div></div>
+<div class="card"><span class="num" style="color:#E9A800">02</span><div><h4>Technical specs</h4><p>Trim sizes, bleed, margins, resolution, page count and interior PDF export.</p></div></div>
+<div class="card"><span class="num" style="color:var(--violet)">03</span><div><h4>Full cover</h4><p>The right order to prepare the back cover, spine and front cover.</p></div></div>
+<div class="card"><span class="num" style="color:var(--mint)">04</span><div><h4>100-page plan</h4><p>A detailed page plan: opening pages, content and closing text.</p></div></div>
+<div class="card"><span class="num">05</span><div><h4>Essential text</h4><p>Frameworks for the title page, copyright, how-to-use page and the end of the book.</p></div></div>
+<div class="card"><span class="num" style="color:#E9A800">06</span><div><h4>Publishing checklist</h4><p>15 checks, in order, to review your files and the details you enter.</p></div></div>
+</div>
+</div>
+</div>
+</section>
+<section class="sec dark">
+<div class="grid-bg"></div>
+<div class="glow" style="width:700px;height:700px;right:-260px;top:-240px;background:radial-gradient(circle,rgba(255,90,54,.45),transparent 62%)"></div>
+<div class="glow" style="width:760px;height:640px;left:-300px;bottom:-280px;background:radial-gradient(circle,rgba(91,61,245,.55),transparent 62%)"></div>
+<div class="wrap z">
+<div class="head2">
+<div><div class="kicker">A real look inside the Kit</div><h2>Pages designed <span class="serif">to be used.</span></h2></div>
+<p class="lead">Tables, measurements, examples and action plans: the content truly guides you through making the book.</p>
+</div>
+<div class="gal">
+<figure><img alt="Master prompt page" loading="lazy" src="https://cdn.jsdelivr.net/gh/kindleacademy/kindle-academy-social@59224914ac2405e9ac56213421f9ae2c515da8b7/web-en/img/kit-p5.webp"/><figcaption>The master prompt</figcaption></figure>
+<figure><img alt="10 prompts page" loading="lazy" src="https://cdn.jsdelivr.net/gh/kindleacademy/kindle-academy-social@59224914ac2405e9ac56213421f9ae2c515da8b7/web-en/img/kit-p8.webp"/><figcaption>10 prompts to adapt</figcaption></figure>
+<figure><img alt="Bleed page" loading="lazy" src="https://cdn.jsdelivr.net/gh/kindleacademy/kindle-academy-social@59224914ac2405e9ac56213421f9ae2c515da8b7/web-en/img/kit-p16.webp"/><figcaption>Bleed and margins</figcaption></figure>
+<figure><img alt="Dimensions page" loading="lazy" src="https://cdn.jsdelivr.net/gh/kindleacademy/kindle-academy-social@59224914ac2405e9ac56213421f9ae2c515da8b7/web-en/img/kit-p17.webp"/><figcaption>Exact dimensions</figcaption></figure>
+<figure><img alt="100-page plan page" loading="lazy" src="https://cdn.jsdelivr.net/gh/kindleacademy/kindle-academy-social@59224914ac2405e9ac56213421f9ae2c515da8b7/web-en/img/kit-p30.webp"/><figcaption>The 100-page plan</figcaption></figure>
+<figure><img alt="Checklist page" loading="lazy" src="https://cdn.jsdelivr.net/gh/kindleacademy/kindle-academy-social@59224914ac2405e9ac56213421f9ae2c515da8b7/web-en/img/kit-p35.webp"/><figcaption>The 15-step checklist</figcaption></figure>
+</div>
+</div>
+</section>
+<section class="sec how">
+<div class="wrap">
+<div class="center"><div class="kicker">How to use the Kit</div><h2>Four steps, <span class="serif">in the right order.</span></h2><p class="lead">Follow the path from start to finish, or jump straight to the sheet your project needs.</p></div>
+<div class="grid4" style="margin-top:46px">
+<div class="card"><div class="no bg-c">01</div><h3>Define the project</h3><p>Choose your audience, format, promise and a precise visual direction.</p></div>
+<div class="card"><div class="no bg-s">02</div><h3>Produce the series</h3><p>Adapt the prompts, test a reference page and keep the whole book consistent.</p></div>
+<div class="card"><div class="no bg-v">03</div><h3>Assemble the files</h3><p>Structure the interior, export the PDF, then create the cover with the final data.</p></div>
+<div class="card"><div class="no bg-m">04</div><h3>Check before submitting</h3><p>Run the checklist, open the KDP previewer and fix issues before you hit publish.</p></div>
+</div>
+<div class="ctabar"><div><b>A reusable process for your next books.</b><p>Once you understand the system, you never start from a blank page again.</p></div><a class="btn" href="/order-kdp-express-kit">Start now <span>→</span></a></div>
+</div>
+</section>
+<section class="sec white fit">
+<div class="wrap">
+<div class="center"><div class="kicker">Is this the right Kit for you?</div><h2>Make real progress, <span class="serif">even starting from zero.</span></h2></div>
+<div class="grid2" style="margin-top:46px">
+<div class="col ok"><h3>The Kit is for you if…</h3><ul class="checks">
+<li>you’re preparing a coloring book, activity book, illustrated book or low-content project;</li><li>you have your idea or your content, but the technical side has you stuck;</li><li>you want to build a complete book rather than a string of images;</li><li>you want to understand dimensions and the cover;</li><li>you’d rather follow a guided method than piece together scattered research.</li></ul></div>
+<div class="col ko"><h3>What the Kit doesn’t do</h3><ul class="crosses">
+<li>it doesn’t guarantee sales, rankings or automatic approval;</li><li>it doesn’t publish the book for you;</li><li>it doesn’t replace checking the current KDP rules;</li><li>it doesn’t encourage mass production without quality control;</li><li>it doesn’t turn a vague idea into an instant success.</li></ul></div>
+</div>
+</div>
+</section>
+
+<section class="sec dark end" id="offre-kit">
+<div class="grid-bg"></div>
+<div class="glow" style="width:820px;height:820px;left:50%;top:-360px;transform:translateX(-50%);background:radial-gradient(circle,rgba(91,61,245,.55),transparent 62%)"></div>
+<div class="wrap z">
+<div class="center" style="margin-bottom:48px"><div class="kicker">What you’ll have at the end</div><h2>Two clean files. <span class="serif">And a method.</span></h2></div>
+<div class="grid4" style="margin-bottom:70px">
+<div class="dcard"><span class="e">📄</span><b class="big">An interior PDF at the right dimensions</b><p>Margins, bleed and resolution checked.</p></div>
+<div class="dcard"><span class="e">📐</span><b class="big">A full cover</b><p>Back, spine and front calculated from the final file.</p></div>
+<div class="dcard"><span class="e">🧭</span><b class="big">A clear project sheet</b><p>Audience, promise, style and master prompt locked in.</p></div>
+<div class="dcard"><span class="e">✅</span><b class="big">A completed checklist</b><p>15 points checked before you click “Publish”.</p></div>
+</div>
+<div class="offer">
+<div class="l">
+<div class="kicker">The KDP Express Launch Kit</div>
+<h2>The whole technical framework, <span class="serif">in one place.</span></h2>
+<p class="lead">Download the pack, follow the suggested order and work your way to your interior PDF and cover PDF.</p>
+<ul class="checks inc"><li>Complete 40-page manual</li><li>10 advanced prompts</li><li>KDP specs and dimensions</li><li>Full cover method</li><li>Detailed 100-page plan</li><li>Practical Excel templates</li><li>15-step checklist</li><li>“Start here” guide</li></ul>
+<small>Digital product designed for learning and organizing a KDP project. Amazon’s rules and interfaces change: always check the official information at the time you publish.</small>
+</div>
+<div class="r">
+<img alt="KDP Express Launch Kit" loading="lazy" src="https://cdn.jsdelivr.net/gh/kindleacademy/kindle-academy-social@59224914ac2405e9ac56213421f9ae2c515da8b7/web-en/img/kit-cover.webp"/>
+<div class="p"><small>$</small>27</div>
+<div class="s">One-time payment · instant access</div>
+<a class="btn" href="/order-kdp-express-kit">Get the Kit <span>→</span></a>
+<div class="sec3"><span>Instant access after payment</span><span>14-day action guarantee</span><span>Secure payment</span></div>
+</div>
+</div>
+<style>.ka .guar{position:relative;z-index:2;margin-top:22px;display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:start;background:rgba(255,255,255,.06);border:1.5px solid rgba(39,199,154,.45);border-radius:26px;padding:30px 34px;text-align:left}.ka .guar .sh{width:74px;height:74px;border-radius:22px;background:var(--mint);color:var(--ink);display:flex;align-items:center;justify-content:center;flex-direction:column;font:700 28px/1 "Space Grotesk",sans-serif}.ka .guar .sh small{font-size:10px;letter-spacing:.14em;margin-top:4px}.ka .guar .k{font:700 12px "Space Grotesk",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--mint)}.ka .guar h3{font-size:24px;line-height:1.2;margin-top:6px;color:#fff}.ka .guar p{margin-top:8px;color:rgba(255,255,255,.78);font-size:16px}.ka .guar ul{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:8px}.ka .guar li{position:relative;padding-left:30px;color:rgba(255,255,255,.88);font-size:15px;line-height:1.5}.ka .guar li:before{content:"✓";position:absolute;left:0;top:1px;width:20px;height:20px;border-radius:50%;background:rgba(39,199,154,.2);color:var(--mint);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}.ka .guar .fine2{margin-top:14px;font-size:13px;color:rgba(255,255,255,.55)}.ka .guar .fine2 a{color:#fff;text-decoration:underline}@media (max-width:640px){.ka .guar{grid-template-columns:1fr;padding:24px 20px;gap:16px}.ka .guar h3{font-size:20px}}</style>
+<div class="guar"><div class="sh">14<small>DAYS</small></div><div><div class="k">14-day action guarantee</div><h3>You apply the method. If the Kit doesn’t help you move forward, we refund you.</h3><p>For 14 days, put the Kit into practice. If you’re still stuck, send us proof of your work and get your $27 back.</p><ul><li>The Concept tab filled in and Preflight steps 01 to 05 checked off</li><li>Your 6 pilot pages, your reference page and at least 10 pages tracked in the Prompts tab</li><li>A few sentences on what held you back</li></ul><p class="fine2">Send your request from your order email, within 14 days, to contact.kindleacademy@gmail.com. One refund per person. <a href="/legal#t-a7">Full terms</a>. And if you get stuck before then, write to us: we’ll help you first.</p></div></div>
+</div>
+</section>
+<section class="sec">
+<div class="wrap">
+<div class="center"><div class="kicker">Frequently asked questions</div><h2>Before <span class="serif">you start.</span></h2></div>
+<div class="faq">
+<details open=""><summary>Is the Kit suitable for beginners?</summary><p>Yes. The path starts with choosing your project and explains the technical terms you need. You then carry out each step in your own tools and check the result.</p></details>
+<details><summary>What kinds of books can the Kit be used for?</summary><p>Coloring books, activity books, illustrated books and other low-content projects that need a structured interior, a full cover and compliant files.</p></details>
+<details><summary>Can I use ChatGPT to create my illustrations?</summary><p>Yes. The manual explains how to write your constraints as full sentences and recommends generating one page at a time. The prompts also work with other image generators.</p></details>
+<details><summary>Is creating the cover included?</summary><p>Yes. A dedicated section explains how to wait for the final interior PDF, prepare the exact data, calculate the template, then work on the back cover, spine and front cover.</p></details>
+<details><summary>How will I receive the Kit?</summary><p>Right after payment, you get access to the download page and receive the link by email. The pack includes the PDF manual, the getting-started guide, the Excel workbook and the license.</p></details>
+<details><summary>Does the Kit guarantee my book will be accepted or sell?</summary><p>No. It helps you prepare and check your files, but Amazon alone decides on publication. Sales depend on the product, the market, the presentation and the readers.</p></details>
+<details><summary>What if the Kit isn’t right for me?</summary><p>You’re covered by the 14-day action guarantee. Put the method into practice: if you’re still stuck, send us your workbook (Concept tab filled in, Preflight steps 01 to 05 checked off, at least 10 pages tracked), your 6 pilot pages and your reference page, with a few words on what held you back. We’ll refund your $27. Full conditions in the <a href="/legal#t-a7">Terms</a>.</p></details>
+</div>
+</div>
+</section>
+<section class="dark final">
+<div class="grid-bg"></div>
+<div class="glow" style="width:760px;height:760px;right:-260px;top:-260px;background:radial-gradient(circle,rgba(255,90,54,.5),transparent 62%)"></div>
+<div class="glow" style="width:820px;height:700px;left:-340px;bottom:-300px;background:radial-gradient(circle,rgba(91,61,245,.55),transparent 62%)"></div>
+<div class="wrap z">
+<div class="kicker">Your next book starts with a clean file</div>
+<h2>Give your KDP project <span class="serif">a real framework.</span></h2>
+<p class="lead">Save your energy for creating. The Kit structures the rest: dimensions, prompts, interior, cover and final check.</p>
+<div style="margin-top:36px"><a class="btn big" href="/order-kdp-express-kit">Get the Kit · $27 <span>→</span></a></div>
+<p class="fine">One-time payment · instant download · 14-day action guarantee</p>
+<div class="foot"><img alt="Kindle Academy" src="https://d1yei2z3i6k35z.cloudfront.net/19098110/6ab7e27ae0d305.32926177_ka-logo.webp"/><span>© 2026 Kindle Academy</span><nav><a href="/legal#legal-notice">Legal notice</a><a href="/legal#privacy">Privacy</a><a href="/legal#terms">Terms</a></nav></div>
+</div>
+</section>
+</div>
+<style>
+.ka-sticky{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:9999;display:none;align-items:center;justify-content:space-between;gap:12px;background:#0E0B26;color:#fff;border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:10px 10px 10px 16px;box-shadow:0 16px 40px rgba(14,11,38,.45);transform:translateY(160%);transition:transform .35s ease}
+.ka-sticky.on{transform:none}
+.ka-sticky b{display:block;font:700 15px/1.2 "Space Grotesk",Arial,sans-serif;color:#fff}
+.ka-sticky small{display:block;margin-top:2px;font:400 11.5px/1.3 Inter,Arial,sans-serif;color:rgba(255,255,255,.65)}
+.ka-sticky a{flex:0 0 auto;background:#FF5A36;color:#fff!important;font:700 14px "Space Grotesk",Arial,sans-serif;padding:12px 16px;border-radius:40px;white-space:nowrap;text-decoration:none}
+@media (max-width:760px){.ka-sticky{display:flex}}
+</style>
+<div aria-hidden="true" class="ka-sticky" id="kaSticky"><div><b>KDP Express Kit · $27</b><small>One-time payment · instant access</small></div><a href="/order-kdp-express-kit">Get the Kit →</a></div>
+<script>
+(function(){
+ var bar=document.getElementById('kaSticky'); if(!bar) return;
+ function tick(){
+  var y=window.scrollY||document.documentElement.scrollTop, h=window.innerHeight;
+  var offer=document.getElementById('offre-kit'), hide=false;
+  if(offer){var r=offer.getBoundingClientRect(); hide=r.top<h && r.bottom>0;}
+  var nearEnd=y+h>document.documentElement.scrollHeight-260;
+  var on=y>650 && !hide && !nearEnd;
+  bar.classList.toggle('on',on); bar.setAttribute('aria-hidden',on?'false':'true');
+ }
+ window.addEventListener('scroll',tick,{passive:true}); window.addEventListener('resize',tick); tick();
+})();
+</script>

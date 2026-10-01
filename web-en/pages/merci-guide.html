@@ -1,0 +1,257 @@
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* ===== Kindle Academy · système visuel commun ===== */
+section:has(.ka),[id^="row-"]:has(.ka),[id^="column-"]:has(.ka),[id^="rawhtml-"]:has(.ka){padding:0!important;margin:0!important;max-width:none!important;width:100%!important}
+[id^="rawhtml-"]:has(.ka)>h2:first-child{display:none!important}
+body{background:#0E0B26!important}
+.ka{--ink:#0E0B26;--ink2:#1A1545;--violet:#5B3DF5;--violet-soft:#EDE9FF;--coral:#FF5A36;--coral-soft:#FFE9E2;--sun:#FFC23D;--sun-soft:#FFF4D6;--mint:#27C79A;--mint-soft:#DDF6EE;--paper:#FBF8F3;--line:#E6E0D6;--text:#1B1830;--muted:#6B6780;
+ font-family:Inter,system-ui,sans-serif;color:var(--text);font-size:17px;line-height:1.6;background:var(--paper);-webkit-font-smoothing:antialiased;overflow-x:hidden;width:100%;text-align:left}
+.ka *{box-sizing:border-box;margin:0;padding:0}
+.ka img{max-width:100%;display:block}
+.ka a{color:inherit;text-decoration:none}
+.ka ul{list-style:none}
+.ka .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.ka .narrow{max-width:860px}
+.ka .serif{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;letter-spacing:-.01em}
+.ka h1,.ka h2,.ka h3,.ka h4{font-family:"Space Grotesk",sans-serif;letter-spacing:-.03em;line-height:1.05;color:inherit;font-weight:700}
+.ka h2{font-size:clamp(34px,5vw,54px)}
+.ka h2 .serif{color:var(--violet)}
+.ka .dark h2 .serif{color:var(--sun)}
+.ka h3{font-size:20px;letter-spacing:-.01em;line-height:1.25}
+.ka .kicker{font-family:"Space Grotesk";font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--coral);display:inline-flex;align-items:center;gap:10px;margin-bottom:18px}
+.ka .kicker:before{content:"";width:24px;height:2px;background:currentColor}
+.ka .dark .kicker{color:var(--sun)}
+.ka .lead{font-size:19px;color:#3A3652;max-width:680px;margin-top:18px}
+.ka .center{text-align:center}.ka .center .lead{margin-left:auto;margin-right:auto}
+.ka section{position:relative}
+.ka .sec{padding:110px 0}
+.ka .sec.tight{padding:80px 0}
+.ka .white{background:#fff}
+/* boutons */
+.ka .btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:linear-gradient(90deg,var(--coral),#FF8A3D);color:#fff;font-family:"Space Grotesk";font-weight:700;font-size:18px;letter-spacing:.02em;padding:20px 34px;border-radius:60px;box-shadow:0 16px 40px rgba(255,90,54,.4);transition:transform .2s,box-shadow .2s;text-align:center;line-height:1.2;border:0;cursor:pointer}
+.ka .btn:hover{transform:translateY(-2px);box-shadow:0 22px 50px rgba(255,90,54,.5)}
+.ka .btn span{font-size:22px;transition:transform .2s}.ka .btn:hover span{transform:translateX(4px)}
+.ka .btn.dl span{font-size:20px}.ka .btn.dl:hover span{transform:translateY(3px)}
+.ka .btn.big{font-size:20px;padding:24px 40px}
+.ka .btn.violet{background:linear-gradient(90deg,var(--violet),#8A6BFF);box-shadow:0 16px 40px rgba(91,61,245,.4)}
+.ka .ghost{display:inline-flex;align-items:center;gap:8px;font-family:"Space Grotesk";font-weight:700;font-size:15px;letter-spacing:.04em;color:inherit;opacity:.75;border-bottom:1px solid currentColor;padding-bottom:2px}
+.ka .ghost:hover{opacity:1}
+/* sections sombres */
+.ka .dark{background:var(--ink);color:#fff;overflow:hidden}
+.ka .dark .lead{color:rgba(255,255,255,.78)}
+.ka .glow{position:absolute;border-radius:50%;pointer-events:none}
+.ka .grid-bg{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:linear-gradient(180deg,#000,transparent 85%);mask-image:linear-gradient(180deg,#000,transparent 85%)}
+.ka .z{position:relative;z-index:2}
+/* barre du haut */
+.ka .top{position:relative;z-index:3;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 0}
+.ka .brand img{height:48px;width:auto}
+.ka .top .tag{font-family:"Space Grotesk";font-size:13px;letter-spacing:.16em;text-transform:uppercase;border:1px solid rgba(255,255,255,.28);padding:8px 16px;border-radius:40px;white-space:nowrap;display:inline-flex;align-items:center;gap:8px}
+.ka .top a.tag:hover{background:rgba(255,255,255,.08)}
+.ka .top .tag .lock{color:var(--mint)}
+/* héros */
+.ka .hero{padding:20px 0 110px}
+.ka .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center;margin-top:40px}
+.ka .badge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);padding:7px 16px 7px 8px;border-radius:40px;font-family:"Space Grotesk";font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+.ka .badge b{background:var(--coral);padding:3px 10px;border-radius:30px;letter-spacing:.06em;color:#fff}
+.ka .badge b.ok{background:var(--mint);color:var(--ink)}
+.ka .hero h1{font-size:clamp(42px,6vw,76px);letter-spacing:-.045em;line-height:.95;margin-top:26px}
+.ka .hero h1 .serif{color:var(--sun);font-size:1.08em}
+.ka .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.ka .chips span{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);padding:9px 16px;border-radius:40px;font-size:15px;font-weight:500}
+.ka .chips span:before{content:"✓";color:var(--mint);font-weight:700;margin-right:8px}
+.ka .cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:22px 28px;margin-top:38px}
+.ka .price-tag{display:flex;align-items:baseline;gap:10px}
+.ka .price-tag b{font-family:"Space Grotesk";font-size:44px;letter-spacing:-.04em;line-height:1}
+.ka .price-tag span{font-size:14px;line-height:1.25;color:rgba(255,255,255,.7)}
+.ka .fine{margin-top:18px;font-size:13.5px;color:rgba(255,255,255,.58);letter-spacing:.02em}
+/* maquette livre */
+.ka .book{position:relative;justify-self:center;width:100%;max-width:400px}
+.ka .book .cover{position:relative;z-index:2;border-radius:12px;box-shadow:0 40px 80px rgba(0,0,0,.55),0 0 0 8px rgba(255,255,255,.07);transform:rotate(4deg)}
+.ka .book .pg{position:absolute;z-index:1;width:78%;border-radius:10px;box-shadow:0 30px 60px rgba(0,0,0,.45)}
+.ka .book .pg.a{left:-18%;top:8%;transform:rotate(-9deg)}
+.ka .book .pg.b{right:-14%;top:16%;transform:rotate(12deg)}
+.ka .sticker{position:absolute;left:-38px;top:-26px;width:124px;height:124px;border-radius:50%;background:var(--sun);color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(-12deg);font-family:"Space Grotesk";font-weight:700;line-height:1;text-align:center;z-index:4;box-shadow:0 16px 36px rgba(0,0,0,.35)}
+.ka .sticker small{font-size:11px;letter-spacing:.16em}
+.ka .sticker b{font-size:38px;letter-spacing:-.04em;margin:4px 0}
+.ka .float{position:absolute;right:-26px;bottom:30px;z-index:4;background:#fff;color:var(--ink);border-radius:16px;padding:14px 18px;box-shadow:0 20px 40px rgba(0,0,0,.35);max-width:220px}
+.ka .float .k{font-family:"Space Grotesk";font-size:11px;letter-spacing:.16em;font-weight:700;color:var(--violet);text-transform:uppercase}
+.ka .float .v{font-family:"Space Grotesk";font-weight:700;font-size:17px;line-height:1.2;margin-top:4px}
+/* cartes */
+.ka .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.ka .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.ka .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.ka .card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px}
+.ka .card p{color:#4A4660;margin-top:8px;font-size:16px}
+.ka .ic{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px;font-family:"Space Grotesk";font-weight:700}
+.ka .ic.c{background:var(--coral-soft);color:var(--coral)}.ka .ic.v{background:var(--violet-soft);color:var(--violet)}.ka .ic.s{background:var(--sun-soft);color:#B07800}.ka .ic.m{background:var(--mint-soft);color:#138A69}
+.ka .num{font-family:"Space Grotesk";font-weight:700;font-size:14px;letter-spacing:.14em;color:var(--coral)}
+.ka .dcard{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:26px}
+.ka .dcard p{color:rgba(255,255,255,.7);font-size:15.5px;margin-top:6px}
+.ka .stat b{font-family:"Space Grotesk";font-size:40px;letter-spacing:-.04em;display:block;line-height:1}
+.ka .stat span{display:block;font-size:14.5px;margin-top:8px;color:rgba(255,255,255,.7)}
+/* étapes */
+.ka .steps{display:flex;flex-direction:column;gap:14px;position:relative}
+.ka .steps:before{content:"";position:absolute;left:27px;top:30px;bottom:30px;width:2px;background:linear-gradient(180deg,var(--coral),var(--violet))}
+.ka .step{display:flex;gap:22px;align-items:flex-start;position:relative}
+.ka .step .no{flex:0 0 56px;height:56px;border-radius:16px;color:#fff;font-family:"Space Grotesk";font-weight:700;font-size:19px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 5px var(--paper)}
+.ka .white .step .no{box-shadow:0 0 0 5px #fff}
+.ka .step .body{flex:1;background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px 24px}
+.ka .step p{color:#4A4660;font-size:15.5px;margin-top:6px}
+.ka .step .out{display:inline-block;margin-top:12px;font-family:"Space Grotesk";font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--violet);background:var(--violet-soft);padding:5px 12px;border-radius:30px}
+.ka .bg-c{background:var(--coral)}.ka .bg-s{background:var(--sun);color:var(--ink)!important}.ka .bg-v{background:var(--violet)}.ka .bg-m{background:var(--mint);color:var(--ink)!important}
+/* listes */
+.ka .checks li{position:relative;padding-left:32px;margin-top:12px}
+.ka .checks li:before{content:"✓";position:absolute;left:0;top:1px;width:22px;height:22px;border-radius:50%;background:var(--mint);color:var(--ink);font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center}
+.ka .crosses li{position:relative;padding-left:32px;margin-top:12px}
+.ka .crosses li:before{content:"×";position:absolute;left:0;top:1px;width:22px;height:22px;border-radius:50%;background:var(--coral-soft);color:var(--coral);font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;line-height:1}
+/* bandeau d'info */
+.ka .note{display:flex;gap:18px;align-items:center;background:var(--violet-soft);border-radius:18px;padding:22px 26px}
+.ka .note .i{flex:0 0 44px;height:44px;border-radius:50%;background:var(--violet);color:#fff;display:flex;align-items:center;justify-content:center;font-family:"Space Grotesk";font-weight:700;font-size:20px}
+.ka .note b{font-family:"Space Grotesk";letter-spacing:.14em;text-transform:uppercase;font-size:13px;display:block;color:var(--ink)}
+.ka .note p{color:#3A3652;font-size:15.5px}
+/* FAQ */
+.ka .faq{max-width:820px;margin:44px auto 0;display:flex;flex-direction:column;gap:12px}
+.ka .faq details{background:#fff;border:1px solid var(--line);border-radius:18px;padding:0 26px}
+.ka .faq summary{cursor:pointer;list-style:none;padding:22px 0;font-family:"Space Grotesk";font-weight:700;font-size:19px;display:flex;justify-content:space-between;gap:20px;align-items:center}
+.ka .faq summary::-webkit-details-marker{display:none}
+.ka .faq summary:after{content:"+";flex:0 0 34px;height:34px;border-radius:50%;background:var(--violet-soft);color:var(--violet);display:flex;align-items:center;justify-content:center;font-size:22px;transition:transform .2s}
+.ka .faq details[open] summary:after{transform:rotate(45deg);background:var(--violet);color:#fff}
+.ka .faq details p{padding:0 0 22px;color:#4A4660}
+/* pied de page */
+.ka .foot{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.14);padding:26px 0 30px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;font-size:13px;color:rgba(255,255,255,.55);letter-spacing:.08em}
+.ka .foot nav{display:flex;gap:22px;flex-wrap:wrap}
+.ka .foot a:hover{color:#fff}
+.ka .foot img{height:26px;width:auto;opacity:.9}
+.ka footer.dark{padding:0}
+@media (max-width:960px){
+ .ka .hero-grid{grid-template-columns:1fr;gap:60px}
+ .ka .book{max-width:320px;margin-top:10px}
+ .ka .grid4{grid-template-columns:repeat(2,1fr)}
+ .ka .grid3{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+ .ka{font-size:16px}
+ .ka .sec{padding:76px 0}.ka .sec.tight{padding:60px 0}
+ .ka .wrap{padding:0 18px}
+ .ka .top{padding:18px 0}
+ .ka .brand img{height:38px}
+ .ka .top .tag{display:none}
+ .ka .grid2,.ka .grid3,.ka .grid4{grid-template-columns:1fr}
+ .ka .btn{width:100%;padding:19px 22px}
+ .ka .btn.big{font-size:18px;padding:21px 22px}
+ .ka .sticker{left:-12px;width:100px;height:100px}.ka .sticker b{font-size:30px}
+ .ka .float{right:-8px}
+ .ka .book .pg{display:none}
+ .ka .badge{font-size:11px;letter-spacing:.1em}
+ .ka .step .no{flex-basis:46px;height:46px;font-size:16px}.ka .steps:before{left:22px}
+ .ka .step .body{padding:18px}
+ .ka .note{flex-direction:column;align-items:flex-start}
+ .ka .foot{flex-direction:column;align-items:flex-start}
+}
+</style>
+<style>
+.ka .th-hero{padding:10px 0 120px}
+.ka .th-hero h1{font-size:clamp(40px,5vw,66px)}
+.ka .th-hero .hero-grid{grid-template-columns:1.15fr .85fr;gap:70px}
+.ka .th-hero .dlrow{display:flex;flex-wrap:wrap;align-items:center;gap:18px 26px;margin-top:38px}
+.ka .th-hero .meta{display:flex;flex-direction:column;gap:2px;font-size:14px;color:rgba(255,255,255,.62)}
+.ka .th-hero .meta b{color:#fff;font-family:"Space Grotesk";font-size:15px;letter-spacing:.02em}
+.ka .th-tip{margin-top:30px;display:flex;gap:14px;align-items:flex-start;max-width:560px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:16px 18px;font-size:15px;color:rgba(255,255,255,.78)}
+.ka .th-tip i{flex:0 0 30px;height:30px;border-radius:50%;background:var(--sun);color:var(--ink);font-style:normal;font-weight:700;display:flex;align-items:center;justify-content:center;font-family:"Space Grotesk"}
+.ka .th-tip b{color:#fff}
+.ka .th-start .grid3{margin-top:48px}
+.ka .th-start .card{position:relative;display:flex;flex-direction:column}
+.ka .th-start .card .top2{display:flex;justify-content:space-between;align-items:center;margin-bottom:26px}
+.ka .th-start .card .big{font-family:"Space Grotesk";font-weight:700;font-size:56px;letter-spacing:-.05em;line-height:.8}
+.ka .th-start .card:nth-child(1) .big{color:var(--coral)}.ka .th-start .card:nth-child(2) .big{color:#E9A800}.ka .th-start .card:nth-child(3) .big{color:var(--violet)}
+.ka .th-start .card .out{margin-top:auto;padding-top:20px}
+.ka .th-start .card .out span{display:inline-block;font-family:"Space Grotesk";font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--violet);background:var(--violet-soft);padding:6px 12px;border-radius:30px}
+.ka .th-start .head{display:flex;justify-content:space-between;align-items:flex-end;gap:14px 40px;flex-wrap:wrap}
+.ka .th-start .head .lead{max-width:420px;margin-top:0;font-size:17px;color:var(--muted)}
+.ka .th-kit{padding:120px 0 0}
+.ka .th-kit .kgrid{position:relative;z-index:2;display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:center}
+.ka .th-kit .book{max-width:340px}
+.ka .th-kit .book .cover{transform:rotate(-4deg)}
+.ka .th-kit .pts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px}
+.ka .th-kit .pts div{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:18px}
+.ka .th-kit .pts b{display:block;font-family:"Space Grotesk";font-size:16px;line-height:1.2}
+.ka .th-kit .pts span{display:block;margin-top:6px;font-size:13.5px;line-height:1.45;color:rgba(255,255,255,.65)}
+.ka .th-kit .pts div:nth-child(1) b:before{content:"01 ";color:var(--coral)}.ka .th-kit .pts div:nth-child(2) b:before{content:"02 ";color:var(--sun)}.ka .th-kit .pts div:nth-child(3) b:before{content:"03 ";color:#A99BFF}
+.ka .th-kit .later{display:inline-block;margin-top:22px;font-size:14px;color:rgba(255,255,255,.6);border-bottom:1px solid rgba(255,255,255,.3)}
+.ka .th-kit .later:hover{color:#fff}
+.ka .th-kit .foot{margin-top:120px}
+@media (max-width:960px){.ka .th-kit .kgrid{grid-template-columns:1fr;gap:56px}.ka .th-kit .book{max-width:280px}}
+@media (max-width:640px){.ka .hm{display:none}.ka .badge{padding-right:8px}.ka .th-hero .book .pg{display:none}.ka .th-kit .pts{grid-template-columns:1fr}.ka .th-hero .dlrow .meta{width:100%;text-align:center}.ka .th-kit{padding-top:84px}.ka .th-kit .foot{margin-top:84px}.ka .th-kit .cta-row{justify-content:center}.ka .th-kit .later{display:table;margin:22px auto 0}.ka .th-start .head .lead{margin-top:14px}}
+</style>
+<div class="ka" id="haut">
+<section class="dark hero th-hero">
+<div class="grid-bg"></div>
+<div class="glow" style="width:760px;height:760px;right:-260px;top:-300px;background:radial-gradient(circle,rgba(255,90,54,.55),transparent 62%)"></div>
+<div class="glow" style="width:820px;height:700px;left:-360px;bottom:-320px;background:radial-gradient(circle,rgba(91,61,245,.6),transparent 62%)"></div>
+<div class="wrap">
+<div class="top"><div class="brand"><img alt="Kindle Academy" height="85" src="https://d1yei2z3i6k35z.cloudfront.net/19098110/6ab7e27ae0d305.32926177_ka-logo.webp" width="300"/></div><span class="tag">Free PDF guide</span></div>
+<div class="hero-grid">
+<div>
+<span class="badge"><b class="ok">✓ Sign-up confirmed</b><span class="hm">Thanks for your trust</span></span>
+<h1>Your guide is ready.<br/><span class="serif">It’s waiting for you.</span></h1>
+<p class="lead">Download it now and go from a vague idea to a clear concept, a reusable master prompt and your first 3 to 5 test pages.</p>
+<div class="dlrow">
+<a class="btn big dl" href="https://cdn.jsdelivr.net/gh/kindleacademy/kindle-academy-social@59224914ac2405e9ac56213421f9ae2c515da8b7/web-en/files/Free_Guide_AI_Coloring_Book.pdf" rel="noopener" target="_blank">Download my guide <span>↓</span></a>
+<div class="meta"><b>PDF · 10 pages</b>Instant access · $0</div>
+</div>
+<div class="th-tip"><i>!</i><div><b>Save it right away</b> to your computer or phone: you’ll fill it in as your project moves forward.</div></div>
+</div>
+<div class="book">
+<img alt="" class="pg a" loading="lazy" src="https://cdn.jsdelivr.net/gh/kindleacademy/kindle-academy-social@59224914ac2405e9ac56213421f9ae2c515da8b7/web-en/img/guide-p4.webp"/>
+<img alt="" class="pg b" loading="lazy" src="https://cdn.jsdelivr.net/gh/kindleacademy/kindle-academy-social@59224914ac2405e9ac56213421f9ae2c515da8b7/web-en/img/guide-p6.webp"/>
+<img alt="Kindle Academy free guide cover" class="cover" src="https://cdn.jsdelivr.net/gh/kindleacademy/kindle-academy-social@59224914ac2405e9ac56213421f9ae2c515da8b7/web-en/img/guide-cover.webp"/>
+<div class="sticker"><small>GUIDE</small><b>$0</b><small>FREE</small></div>
+<div class="float"><div class="k">Inside the guide</div><div class="v">4 hands-on worksheets to fill in</div></div>
+</div>
+</div>
+</div>
+</section>
+<section class="sec th-start">
+<div class="wrap">
+<div class="head">
+<div><div class="kicker">Getting started</div><h2>Three actions. <span class="serif">One concrete first result.</span></h2></div>
+<p class="lead">Don’t try to produce a whole book today. Use the guide to test a direction properly.</p>
+</div>
+<div class="grid3">
+<div class="card"><div class="top2"><span class="big">01</span><span class="ic c" style="margin:0">↓</span></div><h3>Download and print the worksheets</h3><p>Keep the guide handy: the worksheets are designed to be filled in as you go.</p><div class="out"><span>Guide in hand</span></div></div>
+<div class="card"><div class="top2"><span class="big">02</span><span class="ic s" style="margin:0">✦</span></div><h3>Choose a direction</h3><p>Define your audience, your theme and the level of detail before you start generating images.</p><div class="out"><span>One-sentence concept</span></div></div>
+<div class="card"><div class="top2"><span class="big">03</span><span class="ic v" style="margin:0">✓</span></div><h3>Test 3 to 5 pages</h3><p>Create a few pilot pages, check their consistency, and only then decide whether the idea deserves a next step.</p><div class="out"><span>Validated prototype</span></div></div>
+</div>
+</div>
+</section>
+<section class="dark th-kit" id="kit-cle-en-main">
+<div class="grid-bg"></div>
+<div class="glow" style="width:700px;height:700px;left:-280px;top:-120px;background:radial-gradient(circle,rgba(255,90,54,.45),transparent 62%)"></div>
+<div class="glow" style="width:760px;height:640px;right:-300px;top:120px;background:radial-gradient(circle,rgba(91,61,245,.55),transparent 62%)"></div>
+<div class="wrap">
+<div class="kgrid">
+<div class="book">
+<img alt="KDP Express Launch Kit cover" class="cover" loading="lazy" src="https://cdn.jsdelivr.net/gh/kindleacademy/kindle-academy-social@59224914ac2405e9ac56213421f9ae2c515da8b7/web-en/img/kit-cover.webp"/>
+<div class="sticker" style="background:var(--coral);color:#fff"><small>KIT</small><b>$27</b><small>ONE-TIME</small></div>
+</div>
+<div>
+<div class="kicker">What’s next, when you’re ready to go further</div>
+<h2>From prototype to a <span class="serif">KDP-ready book.</span></h2>
+<p class="lead">The guide helps you validate your idea. The <b style="color:#fff">KDP Express Launch Kit</b> then takes you all the way to a real coloring book that meets Amazon’s technical requirements.</p>
+<div class="pts">
+<div><b>10 advanced prompts</b><span>Precise foundations to adapt to your niche.</span></div>
+<div><b>Specs and templates</b><span>Trim size, margins, bleed, resolution.</span></div>
+<div><b>Plan and checklist</b><span>A 100-page structure and 15 final checks.</span></div>
+</div>
+<div class="cta-row">
+<a class="btn" href="/kdp-express-kit">Discover the Kit <span>→</span></a>
+<div class="price-tag"><b>$27</b><span>one-time payment<br/>no subscription</span></div>
+</div>
+<a class="later" href="#haut">I’ll start with my free guide first</a>
+</div>
+</div>
+<div class="foot"><img alt="Kindle Academy" src="https://d1yei2z3i6k35z.cloudfront.net/19098110/6ab7e27ae0d305.32926177_ka-logo.webp"/><span>© 2026 Kindle Academy</span><nav><a href="/legal#legal-notice">Legal notice</a><a href="/legal#privacy">Privacy</a></nav></div>
+</div>
+</section>
+</div>
