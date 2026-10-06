@@ -1,0 +1,47 @@
+
+*,*::before,*::after{box-sizing:border-box}
+
+a{color:#4DF3FF}a:hover{color:#9CF8FF}
+@keyframes mqlBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes mqlBob2{0%,100%{transform:translateY(-6px)}50%{transform:translateY(8px)}}
+@keyframes mqlPulse{0%,100%{opacity:.55}50%{opacity:1}}
+@keyframes mqlRing{0%{transform:scale(.6);opacity:.9}100%{transform:scale(1.5);opacity:0}}
+@keyframes mqlDash{to{stroke-dashoffset:-40}}
+@keyframes mqlGrid{to{background-position:0 64px}}
+@keyframes mqlTicker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes mqlFlame{0%,100%{transform:scale(1) rotate(-2deg)}50%{transform:scale(1.06) rotate(2deg)}}
+@keyframes mqlPop{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:none}}
+.mql-bob{animation:mqlBob 6s ease-in-out infinite}
+.mql-bob2{animation:mqlBob2 7.5s ease-in-out infinite}
+.mql-bob3{animation:mqlBob 8.5s ease-in-out infinite}
+.mql-pulse{animation:mqlPulse 2.4s ease-in-out infinite}
+.mql-ring{animation:mqlRing 2.2s ease-out infinite}
+.mql-dash{animation:mqlDash 3s linear infinite}
+.mql-grid{animation:mqlGrid 4s linear infinite}
+.mql-ticker{animation:mqlTicker 38s linear infinite}
+.mql-pop{animation:mqlPop .35s ease-out}
+.mql-flame{animation:mqlFlame 1.6s ease-in-out infinite;transform-origin:50% 90%}
+.mql-isle{transition:transform .35s ease, filter .35s ease}
+.mql-isle:hover{transform:translateY(-10px) scale(1.04);filter:drop-shadow(0 24px 40px rgba(77,243,255,.35))}
+.mql-slot{transition:transform .25s ease, border-color .25s ease}
+.mql-slot:hover{transform:translateY(-4px);border-color:#4DF3FF}
+.mql-opt{transition:transform .2s ease, background .2s ease, border-color .2s ease}
+.mql-choice{transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease}
+.mql-choice:hover{transform:translateX(4px);border-color:var(--k);box-shadow:inset 0 0 0 1px var(--k), 0 0 26px var(--kg)}
+.mql-chev{opacity:.5;transition:opacity .2s ease, transform .2s ease}
+.mql-choice:hover .mql-chev{opacity:1;transform:translateX(3px)}
+@keyframes mqlShim{from{background-position:200% 0}to{background-position:-200% 0}}
+.mql-shimmer{background:linear-gradient(90deg, rgba(77,243,255,0) 0%, rgba(77,243,255,0.35) 50%, rgba(77,243,255,0) 100%);background-size:200% 100%;animation:mqlShim 2.6s linear infinite}
+.mql-opt:hover{transform:translateY(-3px);border-color:#4DF3FF;background:#1A1544}
+.mql-book{transition:transform .35s ease}
+.mql-book:hover{transform:perspective(800px) rotateY(-12deg) translateY(-6px)}
+details.mql-faq summary{cursor:pointer;list-style:none}
+details.mql-faq summary::-webkit-details-marker{display:none}
+details.mql-faq[open] .mql-plus{transform:rotate(45deg)}
+.mql-plus{transition:transform .25s ease}
+@media (prefers-reduced-motion: reduce){.mql-bob,.mql-bob2,.mql-bob3,.mql-pulse,.mql-ring,.mql-dash,.mql-grid,.mql-ticker,.mql-pop,.mql-flame,.mql-shimmer{animation:none}.mql-isle:hover,.mql-slot:hover,.mql-opt:hover,.mql-book:hover{transform:none}}
+
+section:has(#mql-root),[id^="row-"]:has(#mql-root),[id^="column-"]:has(#mql-root),[id^="rawhtml-"]:has(#mql-root){padding:0!important;margin:0!important;max-width:none!important;width:100%!important}
+body{background:#08061A!important;margin:0}
+#mql-root{color:#EEF0FF;text-align:left}
+.mql-note{margin-top:12px;font-family:Manrope,system-ui,sans-serif;font-size:14px;color:#C9C4EE}
