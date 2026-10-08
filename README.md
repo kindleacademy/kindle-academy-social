@@ -1,6 +1,6 @@
 # Kindle Academy · publication automatique Instagram
 
-Chaque jour à 18h (heure de Paris), GitHub publie sur `@kindle.academy` le carrousel prévu ce jour-là dans `schedule.json`, **uniquement s'il est validé** (`"approved": true`).
+Chaque jour à 18h (heure de Paris), GitHub publie sur `@mainquestlab` le carrousel prévu ce jour-là dans `schedule.json`, **uniquement s'il est validé** (`"approved": true`).
 
 ## Organisation
 

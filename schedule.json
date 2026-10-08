@@ -2,224 +2,209 @@
   "timezone": "Europe/Paris",
   "posts": [
     {
-      "date": "2026-09-28",
-      "folder": "posts/2026-09-28-5-erreurs-kdp",
-      "approved": false
-    },
-    {
-      "date": "2026-09-29",
-      "folder": "posts/2026-09-29-5-livres-ia",
-      "approved": false
-    },
-    {
-      "date": "2026-09-30",
-      "folder": "posts/2026-09-30-noel-maintenant",
-      "approved": false
-    },
-    {
-      "date": "2026-10-01",
-      "folder": "posts/2026-10-01-livre-actif",
-      "approved": false
-    },
-    {
-      "date": "2026-10-02",
-      "folder": "posts/2026-10-02-qui-achete",
-      "approved": false
-    },
-    {
-      "date": "2026-10-03",
-      "folder": "posts/2026-10-03-etudiant",
-      "approved": false
-    },
-    {
-      "date": "2026-10-04",
-      "folder": "posts/2026-10-04-sans-stock",
-      "approved": false
-    },
-    {
-      "date": "2026-10-05",
-      "folder": "posts/2026-10-05-salarie",
-      "approved": false
-    },
-    {
-      "date": "2026-10-06",
-      "folder": "posts/2026-10-06-sature",
-      "approved": false
-    },
-    {
-      "date": "2026-10-07",
-      "folder": "posts/2026-10-07-retraite",
-      "approved": false
-    },
-    {
-      "date": "2026-10-08",
-      "folder": "posts/2026-10-08-3-niches",
-      "approved": false
-    },
-    {
-      "date": "2026-10-09",
-      "folder": "posts/2026-10-09-illustrateur",
-      "approved": false
-    },
-    {
-      "date": "2026-10-10",
-      "folder": "posts/2026-10-10-5-idees-recues",
-      "approved": false
-    },
-    {
       "date": "2026-10-11",
-      "folder": "posts/2026-10-11-dropshipping-vs-kdp",
-      "approved": false
+      "folder": "posts/2026-10-11-noel-maintenant",
+      "approved": true
     },
     {
       "date": "2026-10-12",
-      "folder": "posts/2026-10-12-zero-euro",
-      "approved": false
+      "folder": "posts/2026-10-12-qui-achete",
+      "approved": true
     },
     {
       "date": "2026-10-13",
-      "folder": "posts/2026-10-13-debutant-3-mots",
-      "approved": false
+      "folder": "posts/2026-10-13-etudiant",
+      "approved": true
     },
     {
       "date": "2026-10-14",
-      "folder": "posts/2026-10-14-calendrier",
-      "approved": false
+      "folder": "posts/2026-10-14-sans-stock",
+      "approved": true
     },
     {
       "date": "2026-10-15",
-      "folder": "posts/2026-10-15-petit-livre-vs-roman",
-      "approved": false
+      "folder": "posts/2026-10-15-salarie",
+      "approved": true
     },
     {
       "date": "2026-10-16",
-      "folder": "posts/2026-10-16-plusieurs-pays",
-      "approved": false
+      "folder": "posts/2026-10-16-sature",
+      "approved": true
     },
     {
       "date": "2026-10-17",
-      "folder": "posts/2026-10-17-revenus-passifs",
-      "approved": false
+      "folder": "posts/2026-10-17-retraite",
+      "approved": true
     },
     {
       "date": "2026-10-18",
-      "folder": "posts/2026-10-18-vision-investisseur",
-      "approved": false
+      "folder": "posts/2026-10-18-3-niches",
+      "approved": true
     },
     {
       "date": "2026-10-19",
-      "folder": "posts/2026-10-19-enseignant",
-      "approved": false
+      "folder": "posts/2026-10-19-illustrateur",
+      "approved": true
     },
     {
       "date": "2026-10-20",
-      "folder": "posts/2026-10-20-grands-parents",
-      "approved": false
+      "folder": "posts/2026-10-20-5-idees-recues",
+      "approved": true
     },
     {
       "date": "2026-10-21",
-      "folder": "posts/2026-10-21-freelance",
-      "approved": false
+      "folder": "posts/2026-10-21-dropshipping-vs-kdp",
+      "approved": true
     },
     {
       "date": "2026-10-22",
-      "folder": "posts/2026-10-22-reconversion",
-      "approved": false
+      "folder": "posts/2026-10-22-zero-euro",
+      "approved": true
     },
     {
       "date": "2026-10-23",
-      "folder": "posts/2026-10-23-nomade",
-      "approved": false
+      "folder": "posts/2026-10-23-debutant-3-mots",
+      "approved": true
     },
     {
       "date": "2026-10-24",
-      "folder": "posts/2026-10-24-passion-niche",
-      "approved": false
+      "folder": "posts/2026-10-24-calendrier",
+      "approved": true
     },
     {
       "date": "2026-10-25",
-      "folder": "posts/2026-10-25-livres-ia-flop",
-      "approved": false
+      "folder": "posts/2026-10-25-petit-livre-vs-roman",
+      "approved": true
     },
     {
       "date": "2026-10-26",
-      "folder": "posts/2026-10-26-page-test",
-      "approved": false
+      "folder": "posts/2026-10-26-plusieurs-pays",
+      "approved": true
     },
     {
       "date": "2026-10-27",
-      "folder": "posts/2026-10-27-couverture-2s",
-      "approved": false
+      "folder": "posts/2026-10-27-revenus-passifs",
+      "approved": true
     },
     {
       "date": "2026-10-28",
-      "folder": "posts/2026-10-28-fiche-amazon",
-      "approved": false
+      "folder": "posts/2026-10-28-vision-investisseur",
+      "approved": true
     },
     {
       "date": "2026-10-29",
-      "folder": "posts/2026-10-29-livres-etonnants",
-      "approved": false
+      "folder": "posts/2026-10-29-enseignant",
+      "approved": true
     },
     {
       "date": "2026-10-30",
-      "folder": "posts/2026-10-30-pas-besoin-ecrire",
-      "approved": false
+      "folder": "posts/2026-10-30-grands-parents",
+      "approved": true
     },
     {
       "date": "2026-10-31",
-      "folder": "posts/2026-10-31-etre-auteur",
-      "approved": false
+      "folder": "posts/2026-10-31-freelance",
+      "approved": true
     },
     {
       "date": "2026-11-01",
-      "folder": "posts/2026-11-01-legal-ia",
-      "approved": false
+      "folder": "posts/2026-11-01-reconversion",
+      "approved": true
     },
     {
       "date": "2026-11-02",
-      "folder": "posts/2026-11-02-combien-de-temps",
-      "approved": false
+      "folder": "posts/2026-11-02-nomade",
+      "approved": true
     },
     {
       "date": "2026-11-03",
-      "folder": "posts/2026-11-03-budget-pub",
-      "approved": false
+      "folder": "posts/2026-11-03-passion-niche",
+      "approved": true
     },
     {
       "date": "2026-11-04",
-      "folder": "posts/2026-11-04-publie-vs-idees",
-      "approved": false
+      "folder": "posts/2026-11-04-livres-ia-flop",
+      "approved": true
     },
     {
       "date": "2026-11-05",
-      "folder": "posts/2026-11-05-pas-parfait",
-      "approved": false
+      "folder": "posts/2026-11-05-page-test",
+      "approved": true
     },
     {
       "date": "2026-11-06",
-      "folder": "posts/2026-11-06-quiz-profil",
-      "approved": false
+      "folder": "posts/2026-11-06-couverture-2s",
+      "approved": true
     },
     {
       "date": "2026-11-07",
-      "folder": "posts/2026-11-07-cout-ne-rien-faire",
-      "approved": false
+      "folder": "posts/2026-11-07-fiche-amazon",
+      "approved": true
     },
     {
       "date": "2026-11-08",
-      "folder": "posts/2026-11-08-12-themes-saisonniers",
-      "approved": false
+      "folder": "posts/2026-11-08-livres-etonnants",
+      "approved": true
     },
     {
       "date": "2026-11-09",
-      "folder": "posts/2026-11-09-livres-cadeaux",
-      "approved": false
+      "folder": "posts/2026-11-09-pas-besoin-ecrire",
+      "approved": true
     },
     {
       "date": "2026-11-10",
-      "folder": "posts/2026-11-10-tendance-cosy",
-      "approved": false
+      "folder": "posts/2026-11-10-etre-auteur",
+      "approved": true
+    },
+    {
+      "date": "2026-11-11",
+      "folder": "posts/2026-11-11-legal-ia",
+      "approved": true
+    },
+    {
+      "date": "2026-11-12",
+      "folder": "posts/2026-11-12-combien-de-temps",
+      "approved": true
+    },
+    {
+      "date": "2026-11-13",
+      "folder": "posts/2026-11-13-budget-pub",
+      "approved": true
+    },
+    {
+      "date": "2026-11-14",
+      "folder": "posts/2026-11-14-publie-vs-idees",
+      "approved": true
+    },
+    {
+      "date": "2026-11-15",
+      "folder": "posts/2026-11-15-pas-parfait",
+      "approved": true
+    },
+    {
+      "date": "2026-11-16",
+      "folder": "posts/2026-11-16-quiz-profil",
+      "approved": true
+    },
+    {
+      "date": "2026-11-17",
+      "folder": "posts/2026-11-17-cout-ne-rien-faire",
+      "approved": true
+    },
+    {
+      "date": "2026-11-18",
+      "folder": "posts/2026-11-18-12-themes-saisonniers",
+      "approved": true
+    },
+    {
+      "date": "2026-11-19",
+      "folder": "posts/2026-11-19-livres-cadeaux",
+      "approved": true
+    },
+    {
+      "date": "2026-11-20",
+      "folder": "posts/2026-11-20-tendance-cosy",
+      "approved": true
     }
   ]
 }
