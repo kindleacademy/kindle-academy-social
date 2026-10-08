@@ -5,6 +5,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+// Erreur lisible dans le résumé GitHub Actions (annotation), sans jamais afficher le jeton.
+process.on('uncaughtException', e => { console.log(`::error::${String(e.message).replace(/access_token=[^&\s]+/g, 'access_token=***')}`); process.exit(1); });
+process.on('unhandledRejection', e => { console.log(`::error::${String(e && e.message || e).replace(/access_token=[^&\s]+/g, 'access_token=***')}`); process.exit(1); });
+
 const TOKEN = process.env.IG_TOKEN;
 const USER = process.env.IG_USER_ID || 'me';
 const V = process.env.GRAPH_VERSION || 'v23.0';
