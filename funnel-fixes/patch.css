@@ -1,0 +1,4 @@
+/* KA patch 2026-10-10 : rien ne doit être coupé */
+@media (min-width:961px) and (max-width:1240px){.ka .float{right:0!important}.ka .book .pg.b{right:-4%!important}}
+.ka .lg-grid>*{min-width:0}
+.ka .lg-art p,.ka .lg-art li,.ka .lg-art a{overflow-wrap:anywhere}

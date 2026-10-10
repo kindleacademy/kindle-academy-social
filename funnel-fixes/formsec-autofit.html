@@ -1,0 +1,24 @@
+<script>
+/* KA patch 2026-10-10 : hauteur auto du bloc formulaire (desktop), plus de texte coupé */
+(function(){
+  function fit(){
+    var s=document.getElementById('formulaire');
+    var f=document.querySelector('#section-e3a1fab7,#section-fa89ae34');
+    if(!s||!f) return;
+    if(window.innerWidth<1000){s.style.removeProperty('height');f.style.removeProperty('margin-top');f.style.removeProperty('padding-bottom');return;}
+    var top=90, left=s.querySelector('.fs-left');
+    var H=Math.max(640, top+(left?left.offsetHeight:0)+70);
+    s.style.setProperty('height',H+'px','important');
+    f.style.setProperty('margin-top',(-(H-top))+'px','important');
+    f.style.removeProperty('padding-bottom');
+    var gap=s.getBoundingClientRect().bottom-f.getBoundingClientRect().bottom;
+    if(gap>0) f.style.setProperty('padding-bottom',(70+gap)+'px','important');
+  }
+  fit();
+  document.addEventListener('DOMContentLoaded',fit);
+  window.addEventListener('load',fit);
+  window.addEventListener('resize',fit);
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fit);
+  setTimeout(fit,600); setTimeout(fit,2000);
+})();
+</script>
