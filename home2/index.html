@@ -55,6 +55,24 @@
 #mq footer{padding:36px 0 110px;color:#8E89B8;font-size:13px}
 #mq footer .w{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between}
 #mq footer a{text-decoration:underline}
+
+#mq .forms{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+#mq .fo{position:relative;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px 18px 22px;display:flex;flex-direction:column}
+#mq .fo.on{border-color:rgba(140,255,90,.6);background:linear-gradient(180deg,rgba(140,255,90,.08),var(--card))}
+#mq .fo img{width:100%;height:150px;object-fit:contain;margin-bottom:10px}
+#mq .fo .bd{align-self:flex-start;font:800 11px Manrope,system-ui,sans-serif;letter-spacing:.12em;padding:5px 9px;border-radius:999px;background:rgba(255,255,255,.08);color:var(--mut);margin-bottom:10px}
+#mq .fo.on .bd{background:var(--lime);color:#0A0820}
+#mq .fo h3{font:800 20px Manrope,system-ui,sans-serif;margin-bottom:6px}
+#mq .fo p{color:var(--mut);font-size:14px;flex:1}
+#mq .fo .btn{margin-top:16px;width:100%;font-size:15px;padding:13px 14px}
+#mq .fo:not(.on){opacity:.8}
+#mq .revs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+#mq .rv{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px}
+#mq .rv .stars{color:#FFC23D;letter-spacing:2px;margin-bottom:10px}
+#mq .rv q{display:block;font-size:16px;quotes:"“" "”"}
+#mq .rv .who{margin-top:14px;color:var(--mut);font-size:14px;font-weight:700}
+#mq .lead{color:var(--mut);margin:-14px 0 26px;font-size:17px;max-width:640px}
+@media (max-width:860px){#mq .forms{grid-template-columns:1fr 1fr}#mq .revs{grid-template-columns:1fr}#mq .fo img{height:110px}}
 #mq .stick{display:none}
 #mq .stick.show{transform:none!important}
 @media (max-width:860px){
@@ -95,6 +113,15 @@
    <div class="st"><i data-k="s2i">ÉTAPE 2 · CE SOIR</i><h3 data-k="s2t">Tu crées tes pages test</h3><p data-k="s2p">30 minutes pour voir ce que donne ton idée.</p></div>
    <div class="st"><i data-k="s3i">ÉTAPE 3 · QUAND TU VEUX</i><h3 data-k="s3t">Tu publies ton livre</h3><p data-k="s3p">Avec le Kit de lancement KDP Express, si tu veux aller plus vite.</p></div>
   </div></div></section>
+
+ <section id="avis" style="display:none;padding-top:20px"><div class="w"><h2 data-k="rv_t">Ce qu’en disent les premiers</h2><div class="revs" id="revs"></div></div></section>
+ <section style="padding-top:20px"><div class="w"><h2 data-k="fo_t">Les formations Main Quest Lab</h2><p class="lead" data-k="fo_p">Des side business à lancer avec l’IA, le soir après ton job. On commence par Kindle, les autres arrivent.</p>
+  <div class="forms">
+   <div class="fo on"><img src="https://cdn.jsdelivr.net/gh/kindleacademy/kindle-academy-social@ad7a0156f311433ca71b8d70053030d4469e56b8/home/assets/island-kindle-v2.svg" alt=""><span class="bd" data-k="fo_on">DISPONIBLE</span><h3>Kindle / KDP</h3><p data-k="fo1">Crée et publie des livres sur Amazon avec l’IA : coloriage, carnets, jeux.</p><a class="btn go" data-k="fo_cta" href="/guide-livre-coloriage-ia">Commencer gratuitement →</a></div>
+   <div class="fo"><img src="https://cdn.jsdelivr.net/gh/kindleacademy/kindle-academy-social@ad7a0156f311433ca71b8d70053030d4469e56b8/home/assets/island-ugc-v2.svg" alt=""><span class="bd" data-k="fo_soon">BIENTÔT</span><h3>UGC</h3><p data-k="fo2">Crée des vidéos pour les marques, sans avoir besoin d’une grosse audience.</p></div>
+   <div class="fo"><img src="https://cdn.jsdelivr.net/gh/kindleacademy/kindle-academy-social@ad7a0156f311433ca71b8d70053030d4469e56b8/home/assets/island-influence-v2.svg" alt=""><span class="bd" data-k="fo_soon">BIENTÔT</span><h3 data-k="fo3t">Influence</h3><p data-k="fo3">Construis un compte autour de ta passion et monétise-le.</p></div>
+   <div class="fo"><img src="https://cdn.jsdelivr.net/gh/kindleacademy/kindle-academy-social@ad7a0156f311433ca71b8d70053030d4469e56b8/home/assets/island-travel-v2.svg" alt=""><span class="bd" data-k="fo_soon">BIENTÔT</span><h3 data-k="fo4t">Voyager gratuitement</h3><p data-k="fo4">Les méthodes pour voyager plus en dépensant moins.</p></div>
+  </div></div></section>
  <section style="padding-top:20px"><div class="w faq"><h2 data-k="faq_t">Questions fréquentes</h2>
   <details><summary data-k="q1">Je ne sais pas dessiner, c’est grave ?</summary><p data-k="a1">Non. L’IA génère les pages, toi tu choisis l’idée, tu tries et tu ajustes.</p></details>
   <details><summary data-k="q2">Publier sur Amazon, ça coûte combien ?</summary><p data-k="a2">Rien à avancer : le compte KDP est gratuit, l’ISBN peut être fourni, et l’impression est déduite de chaque vente.</p></details>
@@ -109,8 +136,10 @@
 (function(){
 var A='https://cdn.jsdelivr.net/gh/kindleacademy/kindle-academy-social@ad7a0156f311433ca71b8d70053030d4469e56b8/home/assets/';
 var URL={fr:'/guide-livre-coloriage-ia',en:'/free-coloring-guide'};
-var EN={kick:'KINDLE ACADEMY · FREE GUIDE',h1:'Create your first coloring book <em>with AI</em>.',sub:'And publish it on Amazon, in the evening after work. The free guide shows you how to get your first pages done in 30 minutes.',cta:'Get the free guide →',cta_s:'Free guide',micro:'100% free · Sent by email · Unsubscribe in one click',f1:'to publish on Amazon KDP',f2:'for a first book prototype',f3:'per sale on a €9.99 book',note:'*Simplified example: 100-page B&amp;W paperback, standard trim, Amazon.fr, excl. VAT. Not an income promise: results depend on your work.',in_t:'What’s inside the guide',in1:'Find a book idea that already has an audience',in2:'The master prompt for consistent pages',in3:'Your first 3–5 test pages, ready to judge',in4:'The steps to publish on Amazon KDP',s1i:'STEP 1 · NOW',s1t:'You get the guide',s1p:'Your email, and the PDF lands in your inbox.',s2i:'STEP 2 · TONIGHT',s2t:'You create your test pages',s2p:'30 minutes to see what your idea looks like.',s3i:'STEP 3 · WHENEVER YOU WANT',s3t:'You publish your book',s3p:'With the KDP Express Launch Kit, if you want to go faster.',faq_t:'FAQ',q1:'I can’t draw, is that a problem?',a1:'No. AI generates the pages; you pick the idea, sort and adjust.',q2:'How much does publishing on Amazon cost?',a2:'Nothing upfront: the KDP account is free, the ISBN can be provided, and printing is deducted from each sale.',q3:'I have a job, will I have time?',a3:'Yes, it’s built for that: a few evenings a week are enough to move forward at your pace.',q4:'Is the guide really free?',a4:'Yes. You get the guide and a few useful emails, unsubscribe in one click.',fin_t:'Your first book starts with 3 pages.',fin_p:'The free guide shows you which ones, and how.',legal:'Legal notice',priv:'Privacy'};
+var EN={kick:'KINDLE ACADEMY · FREE GUIDE',h1:'Create your first coloring book <em>with AI</em>.',sub:'And publish it on Amazon, in the evening after work. The free guide shows you how to get your first pages done in 30 minutes.',cta:'Get the free guide →',cta_s:'Free guide',micro:'100% free · Sent by email · Unsubscribe in one click',f1:'to publish on Amazon KDP',f2:'for a first book prototype',f3:'per sale on a €9.99 book',note:'*Simplified example: 100-page B&amp;W paperback, standard trim, Amazon.fr, excl. VAT. Not an income promise: results depend on your work.',in_t:'What’s inside the guide',in1:'Find a book idea that already has an audience',in2:'The master prompt for consistent pages',in3:'Your first 3–5 test pages, ready to judge',in4:'The steps to publish on Amazon KDP',s1i:'STEP 1 · NOW',s1t:'You get the guide',s1p:'Your email, and the PDF lands in your inbox.',s2i:'STEP 2 · TONIGHT',s2t:'You create your test pages',s2p:'30 minutes to see what your idea looks like.',s3i:'STEP 3 · WHENEVER YOU WANT',s3t:'You publish your book',s3p:'With the KDP Express Launch Kit, if you want to go faster.',faq_t:'FAQ',q1:'I can’t draw, is that a problem?',a1:'No. AI generates the pages; you pick the idea, sort and adjust.',q2:'How much does publishing on Amazon cost?',a2:'Nothing upfront: the KDP account is free, the ISBN can be provided, and printing is deducted from each sale.',q3:'I have a job, will I have time?',a3:'Yes, it’s built for that: a few evenings a week are enough to move forward at your pace.',q4:'Is the guide really free?',a4:'Yes. You get the guide and a few useful emails, unsubscribe in one click.',fin_t:'Your first book starts with 3 pages.',fin_p:'The free guide shows you which ones, and how.',legal:'Legal notice',priv:'Privacy',rv_t:'What early users say',fo_t:'Main Quest Lab trainings',fo_p:'Side businesses to launch with AI, in the evening after your job. We start with Kindle, the others are coming.',fo_on:'AVAILABLE',fo_soon:'COMING SOON',fo1:'Create and publish books on Amazon with AI: coloring, journals, puzzles.',fo_cta:'Start for free →',fo2:'Create videos for brands, no big audience needed.',fo3t:'Influence',fo3:'Build an account around your passion and monetize it.',fo4t:'Travel for free',fo4:'Methods to travel more while spending less.'};
+var REVIEWS=[/* Uniquement de VRAIS avis clients : {t:'texte', who:'Prénom, ville', en:'texte anglais optionnel'} */];
 var root=document.getElementById('mq'),FR={};
+if(REVIEWS.length){var rb=root.querySelector('#revs');rb.innerHTML=REVIEWS.slice(0,6).map(function(r){return '<div class="rv"><div class="stars">★★★★★</div><q data-rt="'+(r.en||r.t).replace(/"/g,'&quot;')+'">'+r.t+'</q><div class="who">'+r.who+'</div></div>'}).join('');root.querySelector('#avis').style.display='block'}
 root.querySelectorAll('[data-k]').forEach(function(e){FR[e.getAttribute('data-k')]=FR[e.getAttribute('data-k')]||e.innerHTML});
 function set(l){var D=l==='en'?EN:FR;root.querySelectorAll('[data-k]').forEach(function(e){var k=e.getAttribute('data-k');if(D[k]!=null)e.innerHTML=D[k]});
  root.querySelectorAll('a.go').forEach(function(a){a.setAttribute('href',URL[l])});
