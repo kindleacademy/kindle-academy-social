@@ -1,0 +1,125 @@
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+#mq{--bg:#08061A;--card:#120F2C;--line:rgba(255,255,255,.1);--txt:#EEF0FF;--mut:#B9B4DE;--lime:#8CFF5A;--vio:#6C4BFF;font-family:Manrope,system-ui,sans-serif;color:var(--txt);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+#mq *{box-sizing:border-box;margin:0;padding:0}
+#mq a{color:inherit;text-decoration:none}
+#mq .w{max-width:1120px;margin:0 auto;padding:0 20px}
+#mq .top{position:sticky;top:0;z-index:20;background:rgba(8,6,26,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+#mq .top .w{display:flex;align-items:center;justify-content:space-between;height:68px;gap:12px}
+#mq .logo img{height:34px;display:block}
+#mq .tr{display:flex;align-items:center;gap:14px}
+#mq .lg{font:700 13px Manrope,system-ui,sans-serif;color:var(--mut);display:flex;gap:6px}
+#mq .lg button{background:none;border:0;color:inherit;font:inherit;cursor:pointer;padding:4px 6px;border-radius:6px}
+#mq .lg button.on{color:var(--txt);background:rgba(255,255,255,.08)}
+#mq .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--lime);color:#0A0820;font:800 17px Manrope,system-ui,sans-serif;padding:18px 28px;border-radius:14px;box-shadow:0 10px 30px rgba(140,255,90,.28);transition:transform .15s,box-shadow .15s;white-space:nowrap}
+#mq .btn:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(140,255,90,.38)}
+#mq .btn.sm{font-size:14px;padding:11px 16px;border-radius:10px;box-shadow:none}
+#mq .hero{position:relative;padding:72px 0 56px}
+#mq .hero:before{content:"";position:absolute;inset:-200px -20% auto;height:700px;background:radial-gradient(closest-side,rgba(108,75,255,.35),transparent);pointer-events:none}
+#mq .hg{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+#mq .kick{display:inline-block;font:800 12px Manrope,system-ui,sans-serif;letter-spacing:.16em;color:var(--lime);border:1px solid rgba(140,255,90,.4);background:rgba(140,255,90,.07);padding:7px 12px;border-radius:999px;margin-bottom:22px}
+#mq h1{font:800 clamp(34px,5vw,58px)/1.05 Unbounded,sans-serif;letter-spacing:-.02em}
+#mq h1 em{font-style:normal;color:var(--lime)}
+#mq .sub{font-size:clamp(17px,2vw,20px);color:var(--mut);margin:22px 0 30px;max-width:560px}
+#mq .micro{font-size:13px;color:var(--mut);margin-top:14px}
+#mq .vis{position:relative;height:440px}
+#mq .vis img{position:absolute;border-radius:14px;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+#mq .vis .g{width:64%;left:4%;top:4%;transform:rotate(-4deg);z-index:2}
+#mq .vis .p{width:52%;right:2%;top:20%;transform:rotate(5deg);border:6px solid #fff}
+#mq .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px}
+#mq .f{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+#mq .f b{display:block;font:800 30px Unbounded,sans-serif;color:var(--lime);letter-spacing:-.02em}
+#mq .f span{color:var(--mut);font-size:15px}
+#mq .note{font-size:12px;color:#8E89B8;margin-top:12px}
+#mq section{padding:56px 0}
+#mq h2{font:800 clamp(26px,3.4vw,38px)/1.1 Unbounded,sans-serif;letter-spacing:-.02em;margin-bottom:26px}
+#mq .two{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+#mq .chk{list-style:none;display:grid;gap:14px}
+#mq .chk li{display:flex;gap:14px;align-items:flex-start;font-size:18px;font-weight:700}
+#mq .chk li:before{content:"✓";flex:none;width:30px;height:30px;border-radius:9px;background:var(--lime);color:#0A0820;display:flex;align-items:center;justify-content:center;font-weight:800}
+#mq .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+#mq .st{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px}
+#mq .st i{font:800 14px Manrope,system-ui,sans-serif;font-style:normal;color:var(--lime);letter-spacing:.12em}
+#mq .st h3{font:800 20px Manrope,system-ui,sans-serif;margin:8px 0 6px}
+#mq .st p{color:var(--mut);font-size:15px}
+#mq .cta{text-align:center;margin-top:30px}
+#mq .faq{max-width:760px}
+#mq details{border-bottom:1px solid var(--line);padding:18px 0}
+#mq summary{cursor:pointer;font:800 18px Manrope,system-ui,sans-serif;list-style:none;display:flex;justify-content:space-between;gap:16px}
+#mq summary::-webkit-details-marker{display:none}
+#mq summary:after{content:"+";color:var(--lime);font-size:22px;line-height:1}
+#mq details[open] summary:after{content:"–"}
+#mq details p{color:var(--mut);margin-top:10px}
+#mq .final{background:linear-gradient(135deg,#1B1450,#120F2C);border:1px solid rgba(140,255,90,.35);border-radius:26px;padding:48px 28px;text-align:center}
+#mq .final p{color:var(--mut);margin:-10px 0 26px}
+#mq footer{padding:36px 0 110px;color:#8E89B8;font-size:13px}
+#mq footer .w{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between}
+#mq footer a{text-decoration:underline}
+#mq .stick{display:none}
+#mq .stick.show{transform:none!important}
+@media (max-width:860px){
+ #mq .hg,#mq .two{grid-template-columns:1fr;gap:28px}
+ #mq .hero{padding:40px 0 30px}
+ #mq .vis{height:350px;margin-bottom:10px}
+ #mq .vis .g{width:58%}
+ #mq .vis .p{width:46%;top:12%}
+ #mq .facts,#mq .steps{grid-template-columns:1fr}
+ #mq .top .btn{display:none}
+ #mq .hero .btn,#mq .cta .btn,#mq .final .btn{width:100%}
+ #mq .stick{display:block;transform:translateY(120%);transition:transform .25s;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(8,6,26,.94);border-top:1px solid var(--line)}
+ #mq .stick .btn{width:100%;padding:16px}
+}
+</style>
+<div id="mq">
+ <div class="top"><div class="w"><a class="logo" href="#top" aria-label="Main Quest Lab"><img src="https://cdn.jsdelivr.net/gh/kindleacademy/kindle-academy-social@ad7a0156f311433ca71b8d70053030d4469e56b8/home/assets/logo-mql.webp" alt="Main Quest Lab"></a>
+  <div class="tr"><div class="lg"><button data-l="fr">FR</button><button data-l="en">EN</button></div><a class="btn sm go" data-k="cta_s" href="/guide-livre-coloriage-ia">Guide gratuit</a></div></div></div>
+ <div class="hero" id="top"><div class="w hg">
+  <div><span class="kick" data-k="kick">KINDLE ACADEMY · GUIDE GRATUIT</span>
+   <h1 data-k="h1">Crée ton premier livre de coloriage <em>avec l’IA</em>.</h1>
+   <p class="sub" data-k="sub">Et publie-le sur Amazon, le soir après le boulot. Le guide gratuit te montre comment sortir tes premières pages en 30 minutes.</p>
+   <a class="btn go" data-k="cta" href="/guide-livre-coloriage-ia">Recevoir le guide gratuit →</a>
+   <p class="micro" data-k="micro">100 % gratuit · Envoyé par email · Désinscription en un clic</p></div>
+  <div class="vis"><img class="g" data-img="guide" src="https://cdn.jsdelivr.net/gh/kindleacademy/kindle-academy-social@ad7a0156f311433ca71b8d70053030d4469e56b8/home/assets/guide-fr.webp" alt=""><img class="p" src="https://cdn.jsdelivr.net/gh/kindleacademy/kindle-academy-social@ad7a0156f311433ca71b8d70053030d4469e56b8/home/assets/page-cat.webp" alt=""></div>
+ </div>
+ <div class="w"><div class="facts">
+  <div class="f"><b>0 €</b><span data-k="f1">pour publier sur Amazon KDP</span></div>
+  <div class="f"><b>30 min</b><span data-k="f2">pour un premier prototype de livre</span></div>
+  <div class="f"><b>3,94 €*</b><span data-k="f3">par vente pour un livre à 9,99 €</span></div>
+ </div><p class="note" data-k="note">*Exemple simplifié : livre broché 100 pages N&amp;B, format standard, Amazon.fr, hors TVA. Pas une promesse de revenus : les résultats dépendent de ton travail.</p></div></div>
+ <section><div class="w two">
+  <div><h2 data-k="in_t">Ce que tu reçois dans le guide</h2>
+   <ul class="chk"><li data-k="in1">Trouver une idée de livre qui a déjà un public</li><li data-k="in2">Le prompt maître pour des pages cohérentes</li><li data-k="in3">Tes 3 à 5 premières pages test, prêtes à juger</li><li data-k="in4">Les étapes pour publier sur Amazon KDP</li></ul>
+   <div style="margin-top:30px"><a class="btn go" data-k="cta" href="/guide-livre-coloriage-ia">Recevoir le guide gratuit →</a></div></div>
+  <div class="steps" style="grid-template-columns:1fr">
+   <div class="st"><i data-k="s1i">ÉTAPE 1 · MAINTENANT</i><h3 data-k="s1t">Tu reçois le guide</h3><p data-k="s1p">Ton email, et le PDF arrive dans ta boîte.</p></div>
+   <div class="st"><i data-k="s2i">ÉTAPE 2 · CE SOIR</i><h3 data-k="s2t">Tu crées tes pages test</h3><p data-k="s2p">30 minutes pour voir ce que donne ton idée.</p></div>
+   <div class="st"><i data-k="s3i">ÉTAPE 3 · QUAND TU VEUX</i><h3 data-k="s3t">Tu publies ton livre</h3><p data-k="s3p">Avec le Kit de lancement KDP Express, si tu veux aller plus vite.</p></div>
+  </div></div></section>
+ <section style="padding-top:20px"><div class="w faq"><h2 data-k="faq_t">Questions fréquentes</h2>
+  <details><summary data-k="q1">Je ne sais pas dessiner, c’est grave ?</summary><p data-k="a1">Non. L’IA génère les pages, toi tu choisis l’idée, tu tries et tu ajustes.</p></details>
+  <details><summary data-k="q2">Publier sur Amazon, ça coûte combien ?</summary><p data-k="a2">Rien à avancer : le compte KDP est gratuit, l’ISBN peut être fourni, et l’impression est déduite de chaque vente.</p></details>
+  <details><summary data-k="q3">J’ai un job, j’aurai le temps ?</summary><p data-k="a3">Oui, c’est pensé pour ça : quelques soirs par semaine suffisent pour avancer à ton rythme.</p></details>
+  <details><summary data-k="q4">Le guide est vraiment gratuit ?</summary><p data-k="a4">Oui. Tu reçois le guide puis quelques emails utiles, désinscription en un clic.</p></details>
+ </div></section>
+ <section style="padding-top:10px"><div class="w"><div class="final"><h2 data-k="fin_t">Ton premier livre commence par 3 pages.</h2><p data-k="fin_p">Le guide gratuit te montre lesquelles, et comment.</p><a class="btn go" data-k="cta" href="/guide-livre-coloriage-ia">Recevoir le guide gratuit →</a></div></div></section>
+ <footer><div class="w"><span>© Main Quest Lab · Kindle Academy</span><span><a href="/mentions-legales" data-k="legal">Mentions légales</a> · <a href="/confidentialite" data-k="priv">Confidentialité</a> · <a href="mailto:hello@mainquestlab.com">hello@mainquestlab.com</a></span></div></footer>
+ <div class="stick"><a class="btn go" data-k="cta" href="/guide-livre-coloriage-ia">Recevoir le guide gratuit →</a></div>
+</div>
+<script>
+(function(){
+var A='https://cdn.jsdelivr.net/gh/kindleacademy/kindle-academy-social@ad7a0156f311433ca71b8d70053030d4469e56b8/home/assets/';
+var URL={fr:'/guide-livre-coloriage-ia',en:'/free-coloring-guide'};
+var EN={kick:'KINDLE ACADEMY · FREE GUIDE',h1:'Create your first coloring book <em>with AI</em>.',sub:'And publish it on Amazon, in the evening after work. The free guide shows you how to get your first pages done in 30 minutes.',cta:'Get the free guide →',cta_s:'Free guide',micro:'100% free · Sent by email · Unsubscribe in one click',f1:'to publish on Amazon KDP',f2:'for a first book prototype',f3:'per sale on a €9.99 book',note:'*Simplified example: 100-page B&amp;W paperback, standard trim, Amazon.fr, excl. VAT. Not an income promise: results depend on your work.',in_t:'What’s inside the guide',in1:'Find a book idea that already has an audience',in2:'The master prompt for consistent pages',in3:'Your first 3–5 test pages, ready to judge',in4:'The steps to publish on Amazon KDP',s1i:'STEP 1 · NOW',s1t:'You get the guide',s1p:'Your email, and the PDF lands in your inbox.',s2i:'STEP 2 · TONIGHT',s2t:'You create your test pages',s2p:'30 minutes to see what your idea looks like.',s3i:'STEP 3 · WHENEVER YOU WANT',s3t:'You publish your book',s3p:'With the KDP Express Launch Kit, if you want to go faster.',faq_t:'FAQ',q1:'I can’t draw, is that a problem?',a1:'No. AI generates the pages; you pick the idea, sort and adjust.',q2:'How much does publishing on Amazon cost?',a2:'Nothing upfront: the KDP account is free, the ISBN can be provided, and printing is deducted from each sale.',q3:'I have a job, will I have time?',a3:'Yes, it’s built for that: a few evenings a week are enough to move forward at your pace.',q4:'Is the guide really free?',a4:'Yes. You get the guide and a few useful emails, unsubscribe in one click.',fin_t:'Your first book starts with 3 pages.',fin_p:'The free guide shows you which ones, and how.',legal:'Legal notice',priv:'Privacy'};
+var root=document.getElementById('mq'),FR={};
+root.querySelectorAll('[data-k]').forEach(function(e){FR[e.getAttribute('data-k')]=FR[e.getAttribute('data-k')]||e.innerHTML});
+function set(l){var D=l==='en'?EN:FR;root.querySelectorAll('[data-k]').forEach(function(e){var k=e.getAttribute('data-k');if(D[k]!=null)e.innerHTML=D[k]});
+ root.querySelectorAll('a.go').forEach(function(a){a.setAttribute('href',URL[l])});
+ var g=root.querySelector('[data-img=guide]');if(g)g.src=A+(l==='en'?'guide-en.webp':'guide-fr.webp');
+ root.querySelectorAll('.lg button').forEach(function(b){b.className=b.getAttribute('data-l')===l?'on':''});
+ document.documentElement.lang=l;try{localStorage.setItem('mql_lang',l)}catch(e){}}
+var l='fr';try{l=localStorage.getItem('mql_lang')||((navigator.language||'fr').slice(0,2)==='fr'?'fr':'en')}catch(e){l=(navigator.language||'fr').slice(0,2)==='fr'?'fr':'en'}
+root.querySelectorAll('.lg button').forEach(function(b){b.addEventListener('click',function(){set(b.getAttribute('data-l'))})});
+set(l==='en'?'en':'fr');
+var hb=root.querySelector('.hero .btn'),sk=root.querySelector('.stick');if(hb&&sk&&'IntersectionObserver' in window){new IntersectionObserver(function(es){sk.classList.toggle('show',!es[0].isIntersecting)}).observe(hb)}
+})();
+</script>
